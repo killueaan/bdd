@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог портфолио</title>
+    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="assets/style/service.css">
+    <link rel="stylesheet" href="assets/style/catalog.css">
+</head>
+
+<body>
+    <header class="header">
+    </header>
+    <main>
+        <section class="catalog">
+            <div class="container">
+                <h1 class="catalog_title h2_rc">
+                    Портфолио
+                </h1>
+                <form class="catalog_filters" id="catalog-filter">
+                    <div class="catalog_filter">
+                        <div class="catalog_filter__select select">
+                            <button type="button" class="select__button buttons_medium_rc catalog_filter__content"
+                                aria-haspopup="listbox" aria-expanded="false">
+                                <span class="select__value">Тип объекта</span>
+
+                                <img class="select__arrow" src="assets/icons/md-chevron-down.svg" alt="Стрелка вниз">
+                            </button>
+
+                            <ul class="select__list buttons_medium_rc">
+                                <li class="select__option" role="option" data-value="">
+                                    Тип объекта
+                                </li>
+                                <li class="select__option" role="option" data-value="1">
+                                    1 этаж
+                                </li>
+                                <li class="select__option" role="option" data-value="2">
+                                    2 этажа
+                                </li>
+                                <li class="select__option" role="option" data-value="3">
+                                    3 этажа
+                                </li>
+                            </ul>
+
+                            <select class="select__native" name="floors">
+                                <option value="">Этажность</option>
+                                <option value="1">1 этаж</option>
+                                <option value="2">2 этажа</option>
+                                <option value="3">3 этажа</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="catalog_filter">
+                        <label class="catalog_filter__label tabs_medium_rc" for="area">
+                            Площадь
+                        </label>
+                        <div class="catalog_filter__range catalog_filter__content" id="area-range">
+                            <div class="catalog_filter__range-fields">
+                                <label class="range_field buttons_medium_rc" for="area_min">
+                                    <span class="range_field__prefix buttons_medium_rc">от</span>
+                                    <input type="number" id="area_min" name="area_min" value="80" min="0" max="500">
+                                    <span class="range_field__unit">м²</span>
+                                </label>
+
+                                <span class="catalog_filter__range-divider" aria-hidden="true"></span>
+
+                                <label class="range_field buttons_medium_rc" for="area_max">
+                                    <span class="range_field__prefix">до</span>
+                                    <input type="number" id="area_max" name="area_max" value="160" min="0" max="500">
+                                    <span class="range_field__unit">м²</span>
+                                </label>
+                            </div>
+
+                            <div class="range_slider">
+                                <span class="range_slider__track"></span>
+                                <input type="range" class="range_slider__input range_slider__input--min" min="0"
+                                    max="500" step="1" value="80" aria-label="Площадь от">
+                                <input type="range" class="range_slider__input range_slider__input--max" min="0"
+                                    max="500" step="1" value="160" aria-label="Площадь до">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="catalog_filter">
+                        <div class="catalog_filter__select select">
+                            <button type="button" class="select__button buttons_medium_rc catalog_filter__content"
+                                aria-haspopup="listbox" aria-expanded="false">
+                                <span class="select__value">Спальни</span>
+
+                                <img class="select__arrow" src="assets/icons/md-chevron-down.svg" alt="Стрелка вниз">
+                            </button>
+
+                            <ul class="select__list buttons_medium_rc">
+                                <li class="select__option" role="option" data-value="">
+                                    Спальни
+                                </li>
+                                <li class="select__option" role="option" data-value="1">
+                                    1 спальня
+                                </li>
+                                <li class="select__option" role="option" data-value="2">
+                                    2 спальни
+                                </li>
+                                <li class="select__option" role="option" data-value="3">
+                                    3 спальни
+                                </li>
+                            </ul>
+
+                            <select class="select__native" name="bedrooms">
+                                <option value="">Спальни</option>
+                                <option value="1">1 спальня</option>
+                                <option value="2">2 спальни</option>
+                                <option value="3">3 спальни</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="catalog_filter">
+                        <label class="catalog_filter__label tabs_medium_rc" for="area">
+                            Стоимость строительства
+                        </label>
+                        <div class="catalog_filter__range catalog_filter__content" id="area-range">
+                            <div class="catalog_filter__range-fields">
+                                <label class="range_field buttons_medium_rc" for="area_min">
+                                    <span class="range_field__prefix buttons_medium_rc">от</span>
+                                    <input type="number" id="area_min" name="area_min" value="1.0" min="0" max="500">
+                                    <span class="range_field__unit">млн ₽</span>
+                                </label>
+
+                                <span class="catalog_filter__range-divider" aria-hidden="true"></span>
+
+                                <label class="range_field buttons_medium_rc" for="area_max">
+                                    <span class="range_field__prefix">до</span>
+                                    <input type="number" id="area_max" name="area_max" value="160" min="0" max="500">
+                                    <span class="range_field__unit">млн ₽</span>
+                                </label>
+                            </div>
+
+                            <div class="range_slider">
+                                <span class="range_slider__track"></span>
+                                <input type="range" class="range_slider__input range_slider__input--min" min="0"
+                                    max="500" step="1" value="80" aria-label="Площадь от">
+                                <input type="range" class="range_slider__input range_slider__input--max" min="0"
+                                    max="500" step="1" value="160" aria-label="Площадь до">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="catalog_filter__btn catalog_filter__content buttons_medium_rc">
+                        <img src="assets/icons/md-filter.svg" alt="Все фильтры">
+                        Все фильтры
+                    </button>
+                </form>
+
+                <div class="catalog_filter_chips">
+                    <div class="catalog_chip chip chip_filled">
+                        100–150 м²
+                    </div>
+                    <div class="catalog_chip chip chip_filled">
+                        1 этаж
+                    </div>
+                    <div class="catalog_chip chip chip_filled">
+                        3 спальни
+                    </div>
+                    <button class="chip chip_outline">
+                        Сбросить все
+                    </button>
+                </div>
+
+                <div class="catalog_top">
+                    <div class="catalog_count buttons_medium_rc">
+                        Найдено 36 проектов
+                    </div>
+
+                    <div class="catalog_sort chip chip_filled">
+                        По популярности
+                    </div>
+                </div>
+
+                <div class="catalog_list">
+                    <article class="portfolio_card">
+                        <a href="#" class="portfolio_card__image" tabindex="-1" aria-hidden="true">
+                            <div class="portfolio_card__media">
+                                <img src="./assets/images/service_page/portfolio.jpg" alt="" class="cover">
+                                <div class="card__tags">
+                                    <span class="chip chip_light_filled tabs_medium_rc">Интерьер</span>
+                                    <span class="chip chip_dark_filled tabs_medium_rc">2026</span>
+                                </div>
+                                <div class="portfolio_card__task">
+                                    <span class="portfolio_card__task-label buttons_semibold_rc">Задача</span>
+                                    <p class="portfolio_card__task-text tabs_medium_rc">
+                                        Дом для программиста с бетонной отделкой и открытыми коммуникациями в
+                                        интерьере
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="portfolio_card__content">
+                            <h3 class="portfolio_card__title h4_rc">
+                                <a href="#">Трешка в Котельниках</a>
+                            </h3>
+                            <ul class="portfolio_card__meta buttons_medium_rc">
+                                <li>90 м²</li>
+                                <li>4 месяца</li>
+                                <li>Дизайн + комплектация</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="portfolio_card">
+                        <a href="#" class="portfolio_card__image" tabindex="-1" aria-hidden="true">
+                            <div class="portfolio_card__media">
+                                <img src="./assets/images/service_page/portfolio.jpg" alt="" class="cover">
+                                <div class="card__tags">
+                                    <span class="chip chip_light_filled tabs_medium_rc">Интерьер</span>
+                                    <span class="chip chip_dark_filled tabs_medium_rc">2026</span>
+                                </div>
+                                <div class="portfolio_card__task">
+                                    <span class="portfolio_card__task-label buttons_semibold_rc">Задача</span>
+                                    <p class="portfolio_card__task-text tabs_medium_rc">
+                                        Дом для программиста с бетонной отделкой и открытыми коммуникациями в
+                                        интерьере
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="portfolio_card__content">
+                            <h3 class="portfolio_card__title h4_rc">
+                                <a href="#">Трешка в Котельниках</a>
+                            </h3>
+                            <ul class="portfolio_card__meta buttons_medium_rc">
+                                <li>90 м²</li>
+                                <li>4 месяца</li>
+                                <li>Дизайн + комплектация</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="portfolio_card">
+                        <a href="#" class="portfolio_card__image" tabindex="-1" aria-hidden="true">
+                            <div class="portfolio_card__media">
+                                <img src="./assets/images/service_page/portfolio.jpg" alt="" class="cover">
+                                <div class="card__tags">
+                                    <span class="chip chip_light_filled tabs_medium_rc">Интерьер</span>
+                                    <span class="chip chip_dark_filled tabs_medium_rc">2026</span>
+                                </div>
+                                <div class="portfolio_card__task">
+                                    <span class="portfolio_card__task-label buttons_semibold_rc">Задача</span>
+                                    <p class="portfolio_card__task-text tabs_medium_rc">
+                                        Дом для программиста с бетонной отделкой и открытыми коммуникациями в
+                                        интерьере
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="portfolio_card__content">
+                            <h3 class="portfolio_card__title h4_rc">
+                                <a href="#">Трешка в Котельниках</a>
+                            </h3>
+                            <ul class="portfolio_card__meta buttons_medium_rc">
+                                <li>90 м²</li>
+                                <li>4 месяца</li>
+                                <li>Дизайн + комплектация</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="portfolio_card">
+                        <a href="#" class="portfolio_card__image" tabindex="-1" aria-hidden="true">
+                            <div class="portfolio_card__media">
+                                <img src="./assets/images/service_page/portfolio.jpg" alt="" class="cover">
+                                <div class="card__tags">
+                                    <span class="chip chip_light_filled tabs_medium_rc">Интерьер</span>
+                                    <span class="chip chip_dark_filled tabs_medium_rc">2026</span>
+                                </div>
+                                <div class="portfolio_card__task">
+                                    <span class="portfolio_card__task-label buttons_semibold_rc">Задача</span>
+                                    <p class="portfolio_card__task-text tabs_medium_rc">
+                                        Дом для программиста с бетонной отделкой и открытыми коммуникациями в
+                                        интерьере
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="portfolio_card__content">
+                            <h3 class="portfolio_card__title h4_rc">
+                                <a href="#">Трешка в Котельниках</a>
+                            </h3>
+                            <ul class="portfolio_card__meta buttons_medium_rc">
+                                <li>90 м²</li>
+                                <li>4 месяца</li>
+                                <li>Дизайн + комплектация</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="portfolio_card">
+                        <a href="#" class="portfolio_card__image" tabindex="-1" aria-hidden="true">
+                            <div class="portfolio_card__media">
+                                <img src="./assets/images/service_page/portfolio.jpg" alt="" class="cover">
+                                <div class="card__tags">
+                                    <span class="chip chip_light_filled tabs_medium_rc">Интерьер</span>
+                                    <span class="chip chip_dark_filled tabs_medium_rc">2026</span>
+                                </div>
+                                <div class="portfolio_card__task">
+                                    <span class="portfolio_card__task-label buttons_semibold_rc">Задача</span>
+                                    <p class="portfolio_card__task-text tabs_medium_rc">
+                                        Дом для программиста с бетонной отделкой и открытыми коммуникациями в
+                                        интерьере
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="portfolio_card__content">
+                            <h3 class="portfolio_card__title h4_rc">
+                                <a href="#">Трешка в Котельниках</a>
+                            </h3>
+                            <ul class="portfolio_card__meta buttons_medium_rc">
+                                <li>90 м²</li>
+                                <li>4 месяца</li>
+                                <li>Дизайн + комплектация</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="portfolio_card">
+                        <a href="#" class="portfolio_card__image" tabindex="-1" aria-hidden="true">
+                            <div class="portfolio_card__media">
+                                <img src="./assets/images/service_page/portfolio.jpg" alt="" class="cover">
+                                <div class="card__tags">
+                                    <span class="chip chip_light_filled tabs_medium_rc">Интерьер</span>
+                                    <span class="chip chip_dark_filled tabs_medium_rc">2026</span>
+                                </div>
+                                <div class="portfolio_card__task">
+                                    <span class="portfolio_card__task-label buttons_semibold_rc">Задача</span>
+                                    <p class="portfolio_card__task-text tabs_medium_rc">
+                                        Дом для программиста с бетонной отделкой и открытыми коммуникациями в
+                                        интерьере
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="portfolio_card__content">
+                            <h3 class="portfolio_card__title h4_rc">
+                                <a href="#">Трешка в Котельниках</a>
+                            </h3>
+                            <ul class="portfolio_card__meta buttons_medium_rc">
+                                <li>90 м²</li>
+                                <li>4 месяца</li>
+                                <li>Дизайн + комплектация</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="portfolio_card">
+                        <a href="#" class="portfolio_card__image" tabindex="-1" aria-hidden="true">
+                            <div class="portfolio_card__media">
+                                <img src="./assets/images/service_page/portfolio.jpg" alt="" class="cover">
+                                <div class="card__tags">
+                                    <span class="chip chip_light_filled tabs_medium_rc">Интерьер</span>
+                                    <span class="chip chip_dark_filled tabs_medium_rc">2026</span>
+                                </div>
+                                <div class="portfolio_card__task">
+                                    <span class="portfolio_card__task-label buttons_semibold_rc">Задача</span>
+                                    <p class="portfolio_card__task-text tabs_medium_rc">
+                                        Дом для программиста с бетонной отделкой и открытыми коммуникациями в
+                                        интерьере
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="portfolio_card__content">
+                            <h3 class="portfolio_card__title h4_rc">
+                                <a href="#">Трешка в Котельниках</a>
+                            </h3>
+                            <ul class="portfolio_card__meta buttons_medium_rc">
+                                <li>90 м²</li>
+                                <li>4 месяца</li>
+                                <li>Дизайн + комплектация</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="promo_card">
+                        <div class="promo_card__image promo_card__image_portfolio">
+                            <img class="promo_card__bg" src="assets/images/portfolio/promo.jpg" alt="">
+                            <h2 class="promo_card__bg_title h2_rc">Есть задача, которой здесь нет?</h2>
+                            <div class="slogan buttons_semibold_rc">Тем интереснее!</div>
+                        </div>
+
+                        <div class="promo_card__bottom">
+                            <div class="promo_card__content">
+                                <h2 class="promo_card__title h4_rc">Обсудим твой проект</h2>
+                                <p class="promo_card__subtitle buttons_medium_rc">Расскажи, что хочешь сделать.
+                                    Посмотрим, как лучше к этому подойти</p>
+                            </div>
+                            <a href="#" class="primary_btn orange_btn promo_card__btn">
+                                Обсудить проект
+                            </a>
+                        </div>
+                    </article>
+                    <article class="portfolio_card">
+                        <a href="#" class="portfolio_card__image" tabindex="-1" aria-hidden="true">
+                            <div class="portfolio_card__media">
+                                <img src="./assets/images/service_page/portfolio.jpg" alt="" class="cover">
+                                <div class="card__tags">
+                                    <span class="chip chip_light_filled tabs_medium_rc">Интерьер</span>
+                                    <span class="chip chip_dark_filled tabs_medium_rc">2026</span>
+                                </div>
+                                <div class="portfolio_card__task">
+                                    <span class="portfolio_card__task-label buttons_semibold_rc">Задача</span>
+                                    <p class="portfolio_card__task-text tabs_medium_rc">
+                                        Дом для программиста с бетонной отделкой и открытыми коммуникациями в
+                                        интерьере
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="portfolio_card__content">
+                            <h3 class="portfolio_card__title h4_rc">
+                                <a href="#">Трешка в Котельниках</a>
+                            </h3>
+                            <ul class="portfolio_card__meta buttons_medium_rc">
+                                <li>90 м²</li>
+                                <li>4 месяца</li>
+                                <li>Дизайн + комплектация</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="portfolio_card">
+                        <a href="#" class="portfolio_card__image" tabindex="-1" aria-hidden="true">
+                            <div class="portfolio_card__media">
+                                <img src="./assets/images/service_page/portfolio.jpg" alt="" class="cover">
+                                <div class="card__tags">
+                                    <span class="chip chip_light_filled tabs_medium_rc">Интерьер</span>
+                                    <span class="chip chip_dark_filled tabs_medium_rc">2026</span>
+                                </div>
+                                <div class="portfolio_card__task">
+                                    <span class="portfolio_card__task-label buttons_semibold_rc">Задача</span>
+                                    <p class="portfolio_card__task-text tabs_medium_rc">
+                                        Дом для программиста с бетонной отделкой и открытыми коммуникациями в
+                                        интерьере
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="portfolio_card__content">
+                            <h3 class="portfolio_card__title h4_rc">
+                                <a href="#">Трешка в Котельниках</a>
+                            </h3>
+                            <ul class="portfolio_card__meta buttons_medium_rc">
+                                <li>90 м²</li>
+                                <li>4 месяца</li>
+                                <li>Дизайн + комплектация</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="portfolio_card">
+                        <a href="#" class="portfolio_card__image" tabindex="-1" aria-hidden="true">
+                            <div class="portfolio_card__media">
+                                <img src="./assets/images/service_page/portfolio.jpg" alt="" class="cover">
+                                <div class="card__tags">
+                                    <span class="chip chip_light_filled tabs_medium_rc">Интерьер</span>
+                                    <span class="chip chip_dark_filled tabs_medium_rc">2026</span>
+                                </div>
+                                <div class="portfolio_card__task">
+                                    <span class="portfolio_card__task-label buttons_semibold_rc">Задача</span>
+                                    <p class="portfolio_card__task-text tabs_medium_rc">
+                                        Дом для программиста с бетонной отделкой и открытыми коммуникациями в
+                                        интерьере
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="portfolio_card__content">
+                            <h3 class="portfolio_card__title h4_rc">
+                                <a href="#">Трешка в Котельниках</a>
+                            </h3>
+                            <ul class="portfolio_card__meta buttons_medium_rc">
+                                <li>90 м²</li>
+                                <li>4 месяца</li>
+                                <li>Дизайн + комплектация</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="portfolio_card">
+                        <a href="#" class="portfolio_card__image" tabindex="-1" aria-hidden="true">
+                            <div class="portfolio_card__media">
+                                <img src="./assets/images/service_page/portfolio.jpg" alt="" class="cover">
+                                <div class="card__tags">
+                                    <span class="chip chip_light_filled tabs_medium_rc">Интерьер</span>
+                                    <span class="chip chip_dark_filled tabs_medium_rc">2026</span>
+                                </div>
+                                <div class="portfolio_card__task">
+                                    <span class="portfolio_card__task-label buttons_semibold_rc">Задача</span>
+                                    <p class="portfolio_card__task-text tabs_medium_rc">
+                                        Дом для программиста с бетонной отделкой и открытыми коммуникациями в
+                                        интерьере
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="portfolio_card__content">
+                            <h3 class="portfolio_card__title h4_rc">
+                                <a href="#">Трешка в Котельниках</a>
+                            </h3>
+                            <ul class="portfolio_card__meta buttons_medium_rc">
+                                <li>90 м²</li>
+                                <li>4 месяца</li>
+                                <li>Дизайн + комплектация</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+        </section>
+        <section class="plan_cta section">
+            <div class="container plan_cta__inner">
+                <div class="plan_cta__media">
+                    <img src="./assets/images/portfolio/cta.png" alt="" class="plan_cta__img">
+                </div>
+
+                <div class="plan_cta__content">
+                    <h2 class="plan_cta__title h2_rc">Есть проект в голове?</h2>
+                    <div class="plan_cta_title_right">
+                        <h2 class="plan_cta__title_main h2_rc">Давай посмотрим, как его построить</h2>
+                        <a href="#" class="primary_btn orange_btn plan_cta__btn">Обсудить задачу</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer_media">
+            <img class="cover" src="assets/images/portfolio/footer.jpg" alt="Подвал">
+            <div class="footer_media__content">
+                <div class="footer_title_slogan">
+                    <h2 class="footer_media__title">BDD GROUP</h2>
+                    <div class="slogan_footer chip orange_chip">
+                        <h5 class="h5_rc">Проектируем с юмором</h5>
+                    </div>
+                </div> <a href="/" class="footer_media__chip chip_1 tabs_medium_rc orange_chip">
+                    Обсудить дом
+                </a>
+                <a href="/" class="footer_media__chip chip_2 tabs_medium_rc dark_chip">
+                    YouTube
+                </a>
+                <a href="/" class="footer_media__chip chip_3 tabs_medium_rc grey_chip">
+                    Telegram
+                </a>
+                <a href="/" class="footer_media__chip chip_4 tabs_medium_rc grey_chip">
+                    Max
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/filter.js"></script>
+</body>
+
+</html>

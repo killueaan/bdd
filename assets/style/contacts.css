@@ -1,0 +1,90 @@
+.information_search_blocks {
+    display: grid;
+    grid-template-columns: 504px 1fr;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.legal_information_text {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: var(--neutral900);
+}
+
+.information_search_blocks .legal_information {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.information_search_blocks .legal_information_subtitle {
+    opacity: 0.8;
+}
+
+.search_specialist_card {
+    position: relative;
+    padding: 24px;
+}
+
+.search_img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 453px;
+}
+
+.search_card_subtitle {
+    opacity: 0.7;
+    margin-top: 4px;
+    margin-bottom: 24px;
+}
+
+.search_card_caption {
+    max-width: 248px;
+    margin-bottom: 45px;
+}
+
+.map_card {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px;
+}
+
+.map_information {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.map_subtitles {
+    opacity: 0.8;
+}
+
+.map_btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.map_information_block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 8px;
+}
+
+.map_information_text_block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--neutral600);
+}
+
+.address_title_caption,
+.legal_information_title_caption {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
