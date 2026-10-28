@@ -162,3 +162,245 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('catalog-filter');
+    const list = document.querySelector('.catalog_list');
+    if (!form || !list) return;
+
+    const cards = [...list.children].filter((el) => el.tagName === 'ARTICLE' && !el.classList.contains('promo_card'));
+    cards.forEach((card, i) => { card.dataset.order = i; });
+
+    const promo = list.querySelector('.promo_card');
+    const countEl = document.querySelector('.catalog_count');
+    const chipsBox = document.querySelector('.catalog_filter_chips');
+    const emptyEl = document.querySelector('.catalog_empty');
+    const PROMO_AFTER = 6; 
+
+    const selects = [...form.querySelectorAll('.select__native[name]')];
+
+    const ranges = [...form.querySelectorAll('.catalog_filter__range[id$="-range"]')]
+        .map((root) => ({
+            key: root.id.replace(/-range$/, ''),
+            sMin: root.querySelector('.range_slider__input--min'),
+            sMax: root.querySelector('.range_slider__input--max'),
+            fields: root.querySelectorAll('input[type="number"]'),
+            unit: root.querySelector('.range_field__unit')?.textContent.trim() || '',
+        }))
+        .filter((r) => r.sMin && r.sMax);
+
+    const state = { direction: 'all', sort: 'popular' };
+
+    const sortSelect = document.querySelector('.select__native[name="sort"]');
+    const sortBtn = sortSelect ? null : document.querySelector('button.catalog_sort');
+    let sortKey = 'year';
+    let sortLabels = ['Сначала новые', 'Сначала старые'];
+
+    if (sortSelect) {
+        state.sort = sortSelect.value || 'popular';
+    } else if (sortBtn) {
+        sortKey = sortBtn.dataset.sortKey || sortKey;
+        if (sortBtn.dataset.labels) sortLabels = sortBtn.dataset.labels.split('|');
+        state.sort = `${sortKey}-desc`;
+    }
+
+    const getFilters = () => ({
+        direction: state.direction,
+        selects: selects.map((sel) => ({
+            name: sel.name,
+            value: sel.value,
+            label: sel.selectedOptions[0]?.textContent.trim() || '',
+        })),
+        ranges: ranges.map((r) => ({
+            key: r.key,
+            lo: +r.sMin.value,
+            hi: +r.sMax.value,
+            label: `${r.fields[0]?.value ?? r.sMin.value}–${r.fields[1]?.value ?? r.sMax.value}${r.unit ? ' ' + r.unit : ''}`,
+            active: +r.sMin.value > +r.sMin.min || +r.sMax.value < +r.sMax.max,
+        })),
+    });
+
+    const matches = (card, f) => {
+        if (f.direction !== 'all' && card.dataset.direction !== f.direction) return false;
+
+        for (const s of f.selects) {
+            if (s.value && card.dataset[s.name] !== s.value) return false;
+        }
+        for (const r of f.ranges) {
+            if (!r.active) continue;
+            const v = parseFloat(card.dataset[r.key]);
+            if (isNaN(v) || v < r.lo || v > r.hi) return false;
+        }
+        return true;
+    };
+
+    const sortCards = (arr) => {
+        const byOrder = (a, b) => a.dataset.order - b.dataset.order;
+        if (state.sort === 'popular') return arr.sort(byOrder);
+
+        const [key, dir] = state.sort.split('-');
+        const k = dir === 'asc' ? 1 : -1;
+        return arr.sort((a, b) =>
+            ((parseFloat(a.dataset[key]) || 0) - (parseFloat(b.dataset[key]) || 0)) * k || byOrder(a, b));
+    };
+
+    // --- вывод ---
+    const plural = (n, forms) => {
+        const n10 = n % 10, n100 = n % 100;
+        if (n10 === 1 && n100 !== 11) return forms[0];
+        if (n10 >= 2 && n10 <= 4 && (n100 < 12 || n100 > 14)) return forms[1];
+        return forms[2];
+    };
+
+    const renderChips = (f) => {
+        if (!chipsBox) return;
+        const chips = [
+            ...f.selects.filter((s) => s.value).map((s) => ({ reset: `select:${s.name}`, label: s.label })),
+            ...f.ranges.filter((r) => r.active).map((r) => ({ reset: `range:${r.key}`, label: r.label })),
+        ];
+
+        chipsBox.innerHTML = chips.map((c) =>
+            `<button type="button" class="catalog_chip chip chip_filled buttons_medium_rc" data-reset="${c.reset}"
+                aria-label="Убрать фильтр ${c.label}">${c.label}</button>`
+        ).join('') + (chips.length
+            ? '<button type="button" class="chip chip_outline buttons_medium_rc" data-reset="all">Сбросить все</button>'
+            : '');
+
+        chipsBox.hidden = !chips.length;
+    };
+
+    const render = () => {
+        const f = getFilters();
+        const visible = [];
+        const hidden = [];
+
+        cards.forEach((card) => {
+            const ok = matches(card, f);
+            card.hidden = !ok;
+            (ok ? visible : hidden).push(card);
+        });
+
+        const order = sortCards(visible).slice();
+        if (promo) order.splice(Math.min(PROMO_AFTER, visible.length), 0, promo);
+        list.append(...order, ...hidden);
+
+        const n = visible.length;
+        if (countEl) countEl.textContent = `Найдено ${n} ${plural(n, ['проект', 'проекта', 'проектов'])}`;
+        if (emptyEl) emptyEl.hidden = n > 0;
+
+        renderChips(f);
+    };
+
+    let waitTimer, fadeTimer;
+    const update = () => {
+        clearTimeout(waitTimer);
+        clearTimeout(fadeTimer);
+        waitTimer = setTimeout(() => {
+            list.classList.add('is-switching');
+            fadeTimer = setTimeout(() => {
+                render();
+                list.classList.remove('is-switching');
+            }, 200);
+        }, 150);
+    };
+
+    const resetFilter = (what) => {
+        const [type, name] = what.split(':');
+
+        selects.forEach((sel) => {
+            if (type !== 'all' && !(type === 'select' && sel.name === name)) return;
+            sel.closest('.select')?.querySelector('.select__option[data-value=""]')?.click();
+        });
+
+        ranges.forEach((r) => {
+            if (type !== 'all' && !(type === 'range' && r.key === name)) return;
+            r.sMin.value = r.sMin.min;
+            r.sMin.dispatchEvent(new Event('input', { bubbles: true }));
+            r.sMax.value = r.sMax.max;
+            r.sMax.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+
+        update();
+    };
+
+    form.addEventListener('input', update);
+    form.addEventListener('change', update);
+    form.addEventListener('submit', (e) => e.preventDefault()); 
+
+    chipsBox?.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-reset]');
+        if (btn) resetFilter(btn.dataset.reset);
+    });
+
+    sortSelect?.addEventListener('change', () => {
+        state.sort = sortSelect.value || 'popular';
+        update();
+    });
+
+    sortBtn?.addEventListener('click', () => {
+        const asc = state.sort.endsWith('-desc');
+        state.sort = `${sortKey}-${asc ? 'asc' : 'desc'}`;
+        sortBtn.classList.toggle('is-asc', asc);
+        const label = sortBtn.querySelector('.catalog_sort__label');
+        if (label) label.textContent = asc ? sortLabels[1] : sortLabels[0];
+        update();
+    });
+
+    const directions = document.querySelector('[data-directions]');
+
+    if (directions) {
+        const ruler = directions.querySelector('.directions_ruler');
+        const btns = [...directions.querySelectorAll('.directions_btn')];
+        const STEP = 30;        
+        const TAPE_SPEED = 3;   
+        let markerX = 0;
+        let tapeSpin = 0;
+
+        const activeBtn = () => directions.querySelector('.directions_btn.is-active');
+
+        const centerOf = (el) => {
+            const r = el.getBoundingClientRect();
+            return r.left + r.width / 2 - ruler.getBoundingClientRect().left;
+        };
+
+        const moveTo = (btn, animate = true) => {
+            const x = centerOf(btn);
+
+            if (animate) {
+                tapeSpin += Math.round((x - markerX) / STEP) * (TAPE_SPEED - 1) * STEP;
+            }
+            markerX = x;
+
+            ruler.classList.toggle('no-anim', !animate);
+            ruler.style.setProperty('--marker-x', x + 'px');
+            ruler.style.setProperty('--tape-spin', tapeSpin + 'px');
+
+            if (!animate) {
+                ruler.offsetHeight;
+                ruler.classList.remove('no-anim');
+            }
+        };
+
+        btns.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                if (btn.classList.contains('is-active')) return;
+
+                btns.forEach((b) => {
+                    const isActive = b === btn;
+                    b.classList.toggle('is-active', isActive);
+                    b.setAttribute('aria-selected', isActive);
+                });
+
+                moveTo(btn);
+                state.direction = btn.dataset.direction;
+                update();
+            });
+        });
+
+        state.direction = activeBtn()?.dataset.direction || 'all';
+        moveTo(activeBtn(), false);
+        window.addEventListener('resize', () => moveTo(activeBtn(), false));
+    }
+
+    render(); 
+});

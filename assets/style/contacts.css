@@ -1,8 +1,13 @@
+/* informtion_search */
 .information_search_blocks {
     display: grid;
     grid-template-columns: 504px 1fr;
     justify-content: space-between;
     gap: 16px;
+}
+
+.map_frame iframe {
+    border-radius: 4px;
 }
 
 .legal_information_text {
@@ -36,6 +41,7 @@
 }
 
 .search_card_subtitle {
+    color: var(--neutral900);
     opacity: 0.7;
     margin-top: 4px;
     margin-bottom: 24px;
@@ -45,6 +51,7 @@
     max-width: 248px;
     margin-bottom: 45px;
 }
+/* map */
 
 .map_card {
     display: flex;
@@ -87,4 +94,67 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+}
+
+@media(max-width:768px) {
+
+    /* information_search */
+    .information_search_blocks {
+        grid-template-columns: 1fr;
+    }
+
+    .information_search_blocks .legal_information_title {
+        font-size: 24px;
+    }
+
+    .search_specialist_card {
+        overflow: hidden;
+        padding: 16px;
+    }
+
+    .search_card_title,
+    .search_card_subtitle,
+    .search_card_caption,
+    .search_specialist_card .primary_btn {
+        z-index: 2;
+        position: relative;
+    }
+
+    .search_card_title,
+    .search_card_caption {
+        max-width: 175px;
+    }
+
+    .search_card_subtitle {
+        margin-bottom: 12px;
+    }
+
+    .search_img {
+        z-index: 1;
+        height: 310px;
+        right: -130px;
+    }
+
+    .search_specialist_card .primary_btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* map */
+    .map_card {
+        flex-direction: column;
+    }
+
+    .map_frame {
+        order: -1;
+    }
+
+    .map_frame iframe {
+        width: 311px;
+    }
+
+    .address_title,
+    .legal_information_title {
+        font-size: 18px;
+    }
 }

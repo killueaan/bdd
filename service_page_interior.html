@@ -20,7 +20,45 @@
                 </a>
             </div>
             <nav class="header_nav header_rc">
-                <a href="/services/" class="header_link">Услуги</a>
+                <div class="header_nav__item header_dropdown">
+                    <button type="button" class="header_link header_dropdown__toggle" aria-expanded="false"
+                        aria-controls="services-menu">
+                        Услуги
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 17 17" fill="none"
+                            aria-hidden="true">
+                            <path d="M3.5 6.5L8.5 11.5L13.5 6.5" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+
+                    <div class="header_dropdown__panel" id="services-menu">
+                        <ul class="header_dropdown__list header_medium_rc">
+                            <li><a href="/service_page_pzu.html/" class="header_dropdown__link is-active"
+                                    data-img="assets/images/pzu/hero_section.jpg">План застройки участка</a></li>
+                            <li><a href="/service_page_interior.html" class="header_dropdown__link"
+                                    data-img="assets/images/interior/hero_section_interior.jpg">Дизайн интерьера</a>
+                            </li>
+                            <li><a href="/services/landscape/" class="header_dropdown__link"
+                                    data-img="assets/images/interior/hero_section_interior.jpg">Ландшафтный дизайн</a>
+                            </li>
+                            <li><a href="/service_page_project.html" class="header_dropdown__link"
+                                    data-img="assets/images/service_project/hero_section_project.jpg">Проектирование</a>
+                            </li>
+                            <li><a href="/services/facades/" class="header_dropdown__link"
+                                    data-img="assets/images/service_project/hero_section_project.jpg">Реновация
+                                    фасадов</a></li>
+                            <li><a href="/service_page_supervision.html" class="header_dropdown__link"
+                                    data-img="assets/images/supervision/hero_section.jpg">Стройнадзор</a></li>
+                            <li><a href="/service_page_bddmedia.html" class="header_dropdown__link"
+                                    data-img="assets/images/bddmedia/hero_section.jpg">Коммерция и реклама</a></li>
+                            <li><a href="/services/consulting/" class="header_dropdown__link"
+                                    data-img="assets/images/supervision/hero_section.jpg">Консультирование</a></li>
+                        </ul>
+
+                        <div class="header_dropdown__media"></div>
+                    </div>
+                </div>
+
                 <a href="/about/" class="header_link">О компании</a>
                 <a href="/portfolio/" class="header_link">Портфолио</a>
                 <a href="/projects/" class="header_link">Готовые проекты</a>
@@ -28,7 +66,44 @@
                 <a href="/contacts/" class="header_link">Контакты</a>
             </nav>
             <div class="header_buttons">
-                <button class="header_cta tertiary_btn">Заказать проект</button>
+                <ul class="header_contacts">
+                    <li>
+                        <a href="tel:+70000000000" class="header_contact" aria-label="Позвонить">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"
+                                fill="none">
+                                <path
+                                    d="M6.63439 7.0089C7.18538 8.15654 7.93653 9.2321 8.88772 10.1834C9.83899 11.1346 10.9146 11.8858 12.0622 12.4368C12.1609 12.4841 12.2103 12.5079 12.2727 12.5261C12.4947 12.5907 12.7672 12.5443 12.9551 12.4097C13.0081 12.3718 13.0533 12.3266 13.1438 12.2361C13.4206 11.9592 13.559 11.8209 13.6981 11.7304C14.2229 11.3892 14.8995 11.3892 15.4243 11.7304C15.5635 11.8209 15.7018 11.9592 15.9786 12.2361L16.1328 12.3903C16.5536 12.8111 16.7639 13.0214 16.8782 13.2474C17.1055 13.6966 17.1055 14.2273 16.8782 14.6766C16.7639 14.9025 16.5536 15.1129 16.1328 15.5336L16.0081 15.6584C15.5888 16.0777 15.3792 16.2874 15.0941 16.4474C14.7778 16.6251 14.2866 16.7529 13.9238 16.7517C13.597 16.7508 13.3735 16.6874 12.9266 16.5606C10.5252 15.8789 8.25914 14.593 6.36869 12.7025C4.4782 10.812 3.19216 8.54588 2.51056 6.14447C2.38373 5.69762 2.32031 5.47419 2.31934 5.14727C2.31826 4.78452 2.446 4.2933 2.62367 3.97702C2.78378 3.69199 2.99342 3.48235 3.41271 3.06306L3.5375 2.93827C3.95823 2.51755 4.1686 2.30718 4.39452 2.19291C4.84384 1.96565 5.37446 1.96565 5.82378 2.19291C6.04971 2.30718 6.26008 2.51755 6.6808 2.93827L6.83507 3.09254C7.11184 3.36931 7.25023 3.5077 7.3407 3.64685C7.68191 4.17165 7.68191 4.84819 7.3407 5.37298C7.25023 5.51213 7.11184 5.65052 6.83507 5.92729C6.74458 6.01779 6.69933 6.06304 6.66145 6.11593C6.52686 6.30389 6.48039 6.57643 6.54509 6.79838C6.56329 6.86084 6.58699 6.91019 6.63439 7.0089Z"
+                                    fill="#171716" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/username" class="header_contact" target="_blank" rel="noopener"
+                            aria-label="Telegram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"
+                                fill="none">
+                                <path
+                                    d="M3.03117 8.59642C7.05769 6.76182 9.74268 5.55233 11.0861 4.96797C14.9219 3.2995 15.7189 3.00967 16.2384 3.0001C16.3527 2.998 16.6082 3.02761 16.7737 3.16804C16.9134 3.28661 16.9518 3.44679 16.9702 3.55921C16.9886 3.67163 17.0115 3.92773 16.9933 4.12784C16.7855 6.41185 15.8861 11.9545 15.4285 14.5127C15.2349 15.5951 14.8536 15.958 14.4845 15.9936C13.6824 16.0707 13.0734 15.4392 12.2965 14.9067C11.0809 14.0733 10.3941 13.5545 9.21409 12.7413C7.8504 11.8015 8.73442 11.285 9.51159 10.4409C9.71497 10.22 13.249 6.8583 13.3174 6.55334C13.326 6.5152 13.3339 6.37304 13.2532 6.29797C13.1724 6.2229 13.0532 6.24857 12.9672 6.26899C12.8453 6.29792 10.9033 7.64029 7.14115 10.2961C6.58991 10.6919 6.09062 10.8848 5.64327 10.8747C5.15011 10.8635 4.20146 10.5831 3.49623 10.3433C2.63124 10.0493 1.94377 9.89383 2.00363 9.39445C2.03481 9.13434 2.37733 8.86833 3.03117 8.59642Z"
+                                    fill-rule="evenodd" clip-rule="evenodd" fill="#171716" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://max.ru/username" class="header_contact" target="_blank" rel="noopener"
+                            aria-label="Max">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 38 38"
+                                fill="none">
+                                <path
+                                    d="M19.0248 35.0944C15.7535 35.0944 14.2333 34.6169 11.5909 32.7066C9.91943 34.8556 4.62657 36.5351 4.39572 33.6617C4.39572 31.5048 3.91817 29.6822 3.37694 27.6924C2.73225 25.2409 2 22.5109 2 18.5552C2 9.10758 9.7523 2 18.9372 2C28.1301 2 35.3332 9.45779 35.3332 18.6427C35.3641 27.6856 28.0676 35.0462 19.0248 35.0944ZM19.1601 10.1661C14.687 9.93535 11.2008 13.0315 10.4288 17.8866C9.79208 21.906 10.9223 26.8009 11.8853 27.0556C12.347 27.167 13.509 26.2279 14.2333 25.5036C15.431 26.3309 16.8256 26.8279 18.2766 26.9442C22.9115 27.1671 26.8718 23.6386 27.183 19.0089C27.3641 14.3693 23.7956 10.4396 19.1601 10.1741V10.1661Z"
+                                    fill-rule="evenodd" clip-rule="evenodd" fill="#171716" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+
+                <span class="header_divider" aria-hidden="true"></span>
+
+                <button type="button" class="header_cta tertiary_btn">Заказать проект</button>
             </div>
         </div>
     </header>
@@ -61,7 +136,7 @@
                 </div>
             </div>
         </section>
-        <section class="about section">
+        <section class="about section interior">
             <div class="container">
                 <div class="section_top">
                     <h2 class="section_title h2_rc">Что это такое <span>и зачем он нужен</span></h2>
@@ -118,7 +193,7 @@
                 </div>
             </div>
         </section>
-        <section class="formats_section section">
+        <section class="formats_section interior section">
             <div class="container">
                 <div class="section_top">
                     <h2 class="section_title h2_rc">Наши форматы <span>работы над дизайном</span></h2>
@@ -357,6 +432,7 @@
                             </div>
                             <div class="project_gallery__counter chip chip_dark_filled tabs_medium_rc"></div>
                         </div>
+                        <div class="project_gallery__dots"></div>
                     </div>
 
                     <div class="project_gallery__panel" data-gallery-panel="plan" hidden>
@@ -371,6 +447,7 @@
                             </div>
                             <div class="project_gallery__counter chip chip_dark_filled tabs_medium_rc"></div>
                         </div>
+                        <div class="project_gallery__dots"></div>
                     </div>
 
                     <div class="project_gallery__panel" data-gallery-panel="collage" hidden>
@@ -385,19 +462,23 @@
                             </div>
                             <div class="project_gallery__counter chip chip_dark_filled tabs_medium_rc"></div>
                         </div>
+                        <div class="project_gallery__dots"></div>
                     </div>
+
                     <button type="button" class="slider_arrow slider_arrow__prev project_gallery__prev"
-                        aria-label="Назад"><svg xmlns="http://www.w3.org/2000/svg" width="51" height="51"
-                            viewBox="0 0 51 51" fill="none">
-                            <path d="M30.5 41.5L15.5 26.5L30.5 11.5" stroke="#171716" stroke-width="4.5"
+                        aria-label="Назад">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="51" height="51" viewBox="0 0 51 51" fill="none">
+                            <path d="M30.5 41.5L15.5 26.5L30.5 11.5" stroke="currentColor" stroke-width="4.5"
                                 stroke-linecap="round" stroke-linejoin="round" />
-                        </svg></button>
+                        </svg>
+                    </button>
                     <button type="button" class="slider_arrow slider_arrow__next project_gallery__next"
-                        aria-label="Вперёд"><svg xmlns="http://www.w3.org/2000/svg" width="51" height="51"
-                            viewBox="0 0 51 51" fill="none">
-                            <path d="M30.5 41.5L15.5 26.5L30.5 11.5" stroke="#171716" stroke-width="4.5"
+                        aria-label="Вперёд">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="51" height="51" viewBox="0 0 51 51" fill="none">
+                            <path d="M30.5 41.5L15.5 26.5L30.5 11.5" stroke="currentColor" stroke-width="4.5"
                                 stroke-linecap="round" stroke-linejoin="round" />
-                        </svg></button>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>
@@ -467,7 +548,7 @@
 
                             <div class="work_plan_panels">
                                 <img src="./assets/images/interior/plan_interior.jpg" alt="План дома"
-                                    class="work_plan_image">
+                                    class="work_plan_image cover">
                             </div>
                         </div>
                         <div class="work_points_cards card">
@@ -530,7 +611,10 @@
 
                 <div class="price_interiors_information">
                     <div class="price_interior_card card">
-                        <h3 class="price_interior_title h4_rc">Консультация</h3>
+                        <div class="price_interior_title_subtitle">
+                            <p class="price_interior_subtitle header_button_rc">Когда нужен совет</p>
+                            <h3 class="price_interior_title h4_rc">Консультация</h3>
+                        </div>
                         <h3 class="price_interior_amount h4_rc">от 10 000 ₽</h3>
 
                         <p class="price_interior_description body_reg_mr">Разбор задачи и ответы на вопросы на любом
@@ -538,7 +622,11 @@
                     </div>
 
                     <div class="price_interior_card card">
-                        <h3 class="price_interior_title h4_rc">Основа + увидеть</h3>
+                        <div class="price_interior_title_subtitle">
+                            <p class="price_interior_subtitle header_button_rc">Когда нужны план и стиль</p>
+                            <h3 class="price_interior_title h4_rc">Основа + увидеть</h3>
+                        </div>
+
                         <h3 class="price_interior_amount h4_rc">от 600 ₽/м²</h3>
 
                         <p class="price_interior_description body_reg_mr">Варианты планировок и стилевые / цветовые
@@ -547,7 +635,11 @@
                     </div>
 
                     <div class="price_interior_card card">
-                        <h3 class="price_interior_title h4_rc">Полный проект</h3>
+                        <div class="price_interior_title_subtitle">
+                            <p class="price_interior_subtitle header_button_rc">Когда готовишься к ремонту</p>
+                            <h3 class="price_interior_title h4_rc">Полный проект</h3>
+                        </div>
+
                         <h3 class="price_interior_amount h4_rc">4 600 ₽/м²</h3>
                         <p class="price_interior_description body_reg_mr">Концепции, визуальная проработка, чертежи для
                             отделочников и списки материалов, мебели, света.</p>
@@ -604,22 +696,24 @@
                 </div>
 
                 <h2 class="requirements_title h4_rc">Что нужно от клиента <span>для начала</span></h2>
-
-                <div class="requirements_cards interior">
-                    <div class="requirement_card card">
-                        <h3 class="requirement_title h4_rc">План и обмеры</h3>
-                        <p class="requirement_description h5_rc">План помещения и&nbsp;фото, если есть
-                        </p>
-                    </div>
-                    <div class="requirement_card card">
-                        <h3 class="requirement_title h4_rc">Сценарии жизни</h3>
-                        <p class="requirement_description h5_rc">Как ты живешь и&nbsp;что тебе нужно
-                        </p>
-                    </div>
-                    <div class="requirement_card card">
-                        <h3 class="requirement_title h4_rc">Референсы и&nbsp;бюджет</h3>
-                        <p class="requirement_description h5_rc">Что нравится, что&nbsp;не&nbsp;нравится и&nbsp;ориентир бюджета
-                        </p>
+                <div class="swiper requirements_swiper">
+                    <div class="swiper-wrapper requirements_cards interior">
+                        <div class="swiper-slide requirement_card card">
+                            <h3 class="requirement_title h4_rc">План и обмеры</h3>
+                            <p class="requirement_description h5_rc">План помещения и&nbsp;фото, если есть
+                            </p>
+                        </div>
+                        <div class="swiper-slide requirement_card card">
+                            <h3 class="requirement_title h4_rc">Сценарии жизни</h3>
+                            <p class="requirement_description h5_rc">Как ты живешь и&nbsp;что тебе нужно
+                            </p>
+                        </div>
+                        <div class="swiper-slide requirement_card card">
+                            <h3 class="requirement_title h4_rc">Референсы и&nbsp;бюджет</h3>
+                            <p class="requirement_description h5_rc">Что нравится, что&nbsp;не&nbsp;нравится
+                                и&nbsp;ориентир бюджета
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <p class="requirement_card_note body_reg_mr">Подготовь желаемые сроки ремонта. Если нет плана,
@@ -643,7 +737,6 @@
                 <div class="reviews_slider">
                     <div class="swiper reviews_swiper">
                         <div class="swiper-wrapper">
-                            <!-- видеоотзыв -->
                             <article class="swiper-slide review_card">
                                 <a href="https://youtube.com/..." class=" review_card__media--video" target="_blank"
                                     rel="noopener">
@@ -656,7 +749,6 @@
                                 </div>
                             </article>
 
-                            <!-- отзыв из Telegram -->
                             <article class="swiper-slide review_card">
                                 <div class="review_card__media review_card__media--avatar">
                                     <div class="review_card__avatar">
@@ -882,6 +974,96 @@
                 <a href="/" class="footer_media__chip chip_4 tabs_medium_rc grey_chip">
                     Max
                 </a>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="container">
+                <div class="footer_grid">
+                    <nav class="footer_col" aria-label="Компания">
+                        <p class="footer_col__title h5_rc">Компания</p>
+                        <ul class="footer_col__list body_reg_mr">
+                            <li><a href="/about/" class="footer_link">О BDD GROUP</a></li>
+                            <li><a href="/vacancies/" class="footer_link">Вакансии</a></li>
+                            <li><a href="/contacts/" class="footer_link">Контакты</a></li>
+                        </ul>
+                    </nav>
+
+                    <nav class="footer_col" aria-label="Проекты">
+                        <p class="footer_col__title h5_rc">Проекты</p>
+                        <ul class="footer_col__list body_reg_mr">
+                            <li><a href="/projects/" class="footer_link">Готовые проекты</a></li>
+                            <li><a href="/portfolio/" class="footer_link">Портфолио</a></li>
+                            <li><a href="/reviews/" class="footer_link">Разбор проектов</a></li>
+                        </ul>
+                    </nav>
+
+                    <nav class="footer_col" aria-label="Услуги">
+                        <p class="footer_col__title h5_rc">Услуги</p>
+                        <ul class="footer_col__list body_reg_mr">
+                            <li><a href="/service_page_pzu.html" class="footer_link">План застройки участка</a></li>
+                            <li><a href="/service_page_interior.html" class="footer_link">Дизайн интерьера</a></li>
+                            <li><a href="/services/landscape/" class="footer_link">Ландшафтный дизайн</a></li>
+                            <li><a href="/service_page_project.html" class="footer_link">Проектирование</a></li>
+                            <li><a href="/services/facades/" class="footer_link">Реновация фасадов</a></li>
+                            <li><a href="/service_page_supervision.html" class="footer_link">Стройнадзор</a></li>
+                            <li><a href="/service_page_bddmedia.html" class="footer_link">Коммерция и реклама</a></li>
+                            <li><a href="/services/consulting/" class="footer_link">Консультирование</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="footer_col">
+                        <p class="footer_col__title h5_rc">Работаем в будни<br>с 9:00 до 18:00</p>
+                        <p class="footer_col__text body_reg_mr">Но по телефону можем говорить до&nbsp;21:00. А если вы
+                            нам
+                            очень
+                            понравитесь, готовы поработать в&nbsp;выходные (но это не точно)</p>
+                    </div>
+
+                    <div class="footer_contact">
+                        <a href="mailto:project@design62.ru" class="footer_contact__value h5_rc">project@design62.ru</a>
+                        <span class="footer_contact__label body_reg_mr">Почта для связи</span>
+                    </div>
+
+                    <div class="footer_contact">
+                        <a href="tel:88007756216" class="footer_contact__value h5_rc">8 (800) 775-62-16</a>
+                        <span class="footer_contact__label body_reg_mr">Телефон для связи</span>
+                    </div>
+
+                    <ul class="footer_socials">
+                        <li>
+                            <a href="https://youtube.com/@username" class="footer_social" target="_blank" rel="noopener"
+                                aria-label="YouTube">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15V9l5.8 3-5.8 3z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/username" class="footer_social" target="_blank" rel="noopener"
+                                aria-label="Telegram">
+                                <svg viewBox="0 0 19 19" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M3.03117 8.59642C7.05769 6.76182 9.74268 5.55233 11.0861 4.96797C14.9219 3.2995 15.7189 3.00967 16.2384 3.0001C16.3527 2.998 16.6082 3.02761 16.7737 3.16804C16.9134 3.28661 16.9518 3.44679 16.9702 3.55921C16.9886 3.67163 17.0115 3.92773 16.9933 4.12784C16.7855 6.41185 15.8861 11.9545 15.4285 14.5127C15.2349 15.5951 14.8536 15.958 14.4845 15.9936C13.6824 16.0707 13.0734 15.4392 12.2965 14.9067C11.0809 14.0733 10.3941 13.5545 9.21409 12.7413C7.8504 11.8015 8.73442 11.285 9.51159 10.4409C9.71497 10.22 13.249 6.8583 13.3174 6.55334C13.326 6.5152 13.3339 6.37304 13.2532 6.29797C13.1724 6.2229 13.0532 6.24857 12.9672 6.26899C12.8453 6.29792 10.9033 7.64029 7.14115 10.2961C6.58991 10.6919 6.09062 10.8848 5.64327 10.8747C5.15011 10.8635 4.20146 10.5831 3.49623 10.3433C2.63124 10.0493 1.94377 9.89383 2.00363 9.39445C2.03481 9.13434 2.37733 8.86833 3.03117 8.59642Z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://max.ru/username" class="footer_social" target="_blank" rel="noopener"
+                                aria-label="Max">
+                                <svg viewBox="0 0 38 38" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M19.0248 35.0944C15.7535 35.0944 14.2333 34.6169 11.5909 32.7066C9.91943 34.8556 4.62657 36.5351 4.39572 33.6617C4.39572 31.5048 3.91817 29.6822 3.37694 27.6924C2.73225 25.2409 2 22.5109 2 18.5552C2 9.10758 9.7523 2 18.9372 2C28.1301 2 35.3332 9.45779 35.3332 18.6427C35.3641 27.6856 28.0676 35.0462 19.0248 35.0944ZM19.1601 10.1661C14.687 9.93535 11.2008 13.0315 10.4288 17.8866C9.79208 21.906 10.9223 26.8009 11.8853 27.0556C12.347 27.167 13.509 26.2279 14.2333 25.5036C15.431 26.3309 16.8256 26.8279 18.2766 26.9442C22.9115 27.1671 26.8718 23.6386 27.183 19.0089C27.3641 14.3693 23.7956 10.4396 19.1601 10.1741V10.1661Z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <a href="https://ontape.ru" class="footer_dev" target="_blank" rel="noopener">
+                        <span class="footer_dev__text">Разработано<br>веб-студией</span>
+                        <img src="assets/icons/ontape.svg" alt="Ontape Design" class="footer_dev__logo">
+                    </a>
+                </div>
             </div>
         </div>
     </footer>

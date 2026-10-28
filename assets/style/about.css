@@ -1,3 +1,4 @@
+/* documents */
 .documents_blocks {
     display: grid;
     grid-template-columns: 1fr 504px;
@@ -101,19 +102,6 @@
 }
 
 /* team */
-.team_section--slider {
-    overflow: hidden;
-}
-
-.team_slider {
-    position: relative;
-}
-
-.team_swiper {
-    overflow: visible !important;
-    clip-path: inset(0 -100vw 0 0);
-}
-
 .team_swiper .team_card {
     height: auto;
     aspect-ratio: 465 / 423;
@@ -143,7 +131,7 @@
 
 .team_information_cards {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     margin-top: 20px;
 }
@@ -155,10 +143,12 @@
     justify-content: space-between;
     gap: 24px;
 }
+
 .team_info_card:nth-child(2) .team_info_title {
-   max-width: 478px;
+    max-width: 478px;
 }
-.team_info_title span{
+
+.team_info_title span {
     color: var(--orange500);
 }
 
@@ -171,6 +161,91 @@
 .team_info_subtitle {
     color: var(--neutral600);
 }
-.team_info_caption{
+
+.team_info_caption {
     max-width: 305px;
+}
+
+@media(max-width:768px) {
+
+    /* history */
+    .history_content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-bottom: 48px;
+    }
+
+    .history_dates,
+    .history_item {
+        display: contents;
+    }
+
+    .history_item:nth-child(-n+3) .history_date {
+        order: 1;
+    }
+
+    .history_media {
+        order: 2;
+        margin: 8px 0 2px;
+    }
+
+    .history_item .history_text {
+        order: 3;
+    }
+
+    .history_item:nth-child(n+4) .history_date {
+        order: 4;
+    }
+
+    .history_date {
+        justify-self: start;
+        font-size: 32px;
+    }
+
+    .history_item.is-active .history_date {
+        font-size: 48px;
+    }
+
+    .history_text {
+        position: static;
+        width: auto;
+        display: none;
+    }
+
+    .history_item.is-active .history_text {
+        display: block;
+    }
+
+    /* advantages */
+    .advantages_cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* documents */
+    .documents_blocks {
+        grid-template-columns: 1fr;
+        grid-template-rows: 273px 273px;
+        height: auto;
+    }
+
+    /* team */
+
+    .team_information_cards {
+        grid-template-columns: 1fr;
+    }
+
+    .team_swiper {
+        margin: 0 -16px;
+        padding: 0 16px;
+    }
+
+    .team_info_card {
+        padding: 16px;
+    }
+
+    .team_info_subtitle {
+        font-size: 16px;
+        font-weight: 500;
+    }
 }

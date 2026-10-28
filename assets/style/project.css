@@ -1,3 +1,4 @@
+/* hero_section */
 .hero_swiper {
     position: absolute;
     inset: 0;
@@ -45,6 +46,7 @@
     margin-top: -48px;
 }
 
+/* project_info */
 .project_info__inner {
     display: flex;
     align-items: end;
@@ -100,8 +102,7 @@
     color: var(--neutral500);
 }
 
-/* ===== 3. О проекте ===== */
-
+/* project_about */
 .project_about__inner {
     display: grid;
     grid-template-columns: 400px 1fr;
@@ -430,6 +431,55 @@
     color: var(--orange500);
 }
 
+/* gallery */
+.gallery_tabs {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 3;
+    display: flex;
+    gap: 4px;
+    padding: 8px 24px 8px 12px;
+    border: 1px solid rgba(255, 255, 255, .4);
+    border-radius: 6px;
+    background: #FFFFFF1A;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.gallery_tabs__btn {
+    padding: 6px 16px;
+    border: 0;
+    border-radius: 4px;
+    background: none;
+    color: var(--neutral0);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+}
+
+.gallery_tabs__btn:not(.is-active):hover {
+    background: rgba(255, 255, 255, .2);
+}
+
+.gallery_tabs__btn.is-active {
+    background: var(--neutral0);
+    color: var(--neutral900);
+    cursor: default;
+}
+
+.project_gallery__panel[hidden] {
+    display: none;
+}
+
+.project_gallery__panel[data-gallery-panel="plan"] .swiper-slide img {
+    background: var(--neutral0);
+}
+
+.project_gallery__dots {
+    display: none;
+}
+
 .project_gallery__counter {
     position: absolute;
     left: 50%;
@@ -439,7 +489,6 @@
     transform: translateX(-50%);
     border-radius: 4px;
 }
-
 
 .project_details__table {
     margin: 0;
@@ -457,9 +506,13 @@
     color: var(--neutral900);
 }
 
+.project_get {
+    overflow-x: clip;
+}
 
-.project_get__swiper {
+.project_get .project_get__swiper {
     overflow: visible;
+    clip-path: inset(0 -100vw 0 0);
 }
 
 .project_get__card {
@@ -493,7 +546,6 @@
     z-index: 1;
     color: var(--neutral0);
 }
-
 
 .project_buy__card {
     display: grid;
@@ -585,4 +637,125 @@
 .project_buy__btns {
     display: flex;
     gap: 8px;
+}
+
+@media(max-width:1200px) {
+
+    /* project_info */
+    .project_info__list {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    /* project_about */
+    .project_about_text_blocks {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    /* gallery */
+    .project_gallery__swiper {
+        border-radius: 8px;
+    }
+
+    .project_gallery__swiper .swiper-slide {
+        aspect-ratio: 582 / 565;
+    }
+
+    .project_gallery__counter {
+        display: none;
+    }
+
+    .gallery_tabs {
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        justify-content: space-between;
+        padding: 6px;
+    }
+
+    .gallery_tabs__btn {
+        flex: 1;
+        padding: 8px 6px;
+        text-align: center;
+    }
+
+    .project_gallery__dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        height: 32px;
+        margin-top: 16px;
+    }
+
+    .project_gallery__dot {
+        width: 12px;
+        height: 12px;
+        padding: 0;
+        border-radius: 2px;
+        background: var(--neutral200);
+        cursor: pointer;
+        transition: background .2s ease;
+    }
+
+    .project_gallery__dot.is-active {
+        background: var(--orange500);
+    }
+
+    .project_gallery__slider .slider_arrow {
+        display: block;
+        top: 50%;
+        bottom: 0;
+        width: 32px;
+        height: 32px;
+        transform: none;
+    }
+
+    .project_gallery__slider .slider_arrow svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .project_gallery__prev {
+        left: 0;
+    }
+
+    .project_gallery__slider .project_gallery__next {
+        right: 0;
+        transform: rotate(180deg);
+    }
+
+    /* project_plan */
+    .project_plan__grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* project_who*/
+    .project_who__swiper {
+        margin: 0 -16px;
+        padding: 0 16px;
+    }
+
+    .project_who__list {
+        gap: 0;
+    }
+
+    .project_who__text {
+        max-width: 100%;
+    }
+
+    /* ca_media */
+    .like_cta__media {
+        width: auto;
+        height: 300px;
+        flex-shrink: 0;
+    }
+
+    .case .plan_cta__content {
+        position: absolute;
+        right: 16px;
+        left: 16px;
+        top: 0;
+    }
 }
