@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="stylesheet" href="assets/style/service.css">
+    <link rel="stylesheet" href="assets/style/catalog.css">
 </head>
 
 <body>
@@ -18,7 +19,7 @@
                     <img src="assets/images/logo/bdd_logo_ru.svg" alt="Логотип">
                 </a>
             </div>
-            <nav class="header_nav header_rc">
+            <nav class="header_nav header_rc" id="header-nav">
                 <div class="header_nav__item header_dropdown">
                     <button type="button" class="header_link header_dropdown__toggle" aria-expanded="false"
                         aria-controls="services-menu">
@@ -103,6 +104,12 @@
                 <span class="header_divider" aria-hidden="true"></span>
 
                 <button type="button" class="header_cta tertiary_btn">Заказать проект</button>
+                <button type="button" class="header_burger" aria-label="Открыть меню" aria-expanded="false"
+                    aria-controls="header-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>

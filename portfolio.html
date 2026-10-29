@@ -11,14 +11,14 @@
 </head>
 
 <body>
-    <header class="header header-solid">
+    <header class="header">
         <div class="header_container">
             <div class="header_logo">
                 <a href="/" class="header_logo__image">
                     <img src="assets/images/logo/bdd_logo_ru.svg" alt="Логотип">
                 </a>
             </div>
-            <nav class="header_nav header_rc">
+            <nav class="header_nav header_rc" id="header-nav">
                 <div class="header_nav__item header_dropdown">
                     <button type="button" class="header_link header_dropdown__toggle" aria-expanded="false"
                         aria-controls="services-menu">
@@ -103,6 +103,12 @@
                 <span class="header_divider" aria-hidden="true"></span>
 
                 <button type="button" class="header_cta tertiary_btn">Заказать проект</button>
+                <button type="button" class="header_burger" aria-label="Открыть меню" aria-expanded="false"
+                    aria-controls="header-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
@@ -583,7 +589,7 @@
                         </div>
                     </article>
                 </div>
-            </div> 
+            </div>
         </section>
         <section class="plan_cta section">
             <div class="container plan_cta__inner">

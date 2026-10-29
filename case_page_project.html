@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="stylesheet" href="assets/style/project.css">
     <link rel="stylesheet" href="assets/style/service.css">
+    <link rel="stylesheet" href="assets/style/catalog.css">
 </head>
 
 <body>
@@ -20,7 +21,7 @@
                     <img src="assets/images/logo/bdd_logo_ru.svg" alt="Логотип">
                 </a>
             </div>
-            <nav class="header_nav header_rc">
+            <nav class="header_nav header_rc" id="header-nav">
                 <div class="header_nav__item header_dropdown">
                     <button type="button" class="header_link header_dropdown__toggle" aria-expanded="false"
                         aria-controls="services-menu">
@@ -105,6 +106,12 @@
                 <span class="header_divider" aria-hidden="true"></span>
 
                 <button type="button" class="header_cta tertiary_btn">Заказать проект</button>
+                <button type="button" class="header_burger" aria-label="Открыть меню" aria-expanded="false"
+                    aria-controls="header-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
@@ -400,7 +407,7 @@
             </div>
         </section>
 
-        <section class="project_gallery section">
+        <section class="project_gallery project_case section">
             <div class="container">
                 <div class="section_top">
                     <h2 class="project_gallery__title h2_rc">
@@ -455,7 +462,7 @@
                             class="project_details__name">Фасад</span><span class="project_details__value">Штукатурка +
                             искусственный камень</span></li>
                     <li><span class="project_details__num">03</span><span class="project_details__name">Материал
-                            стен</span><span class="project_details__value">Теплая</span></li>
+                            стен</span><span class="project_details__value">Теплая керамика</span></li>
                     <li><span class="project_details__num">04</span><span
                             class="project_details__name">Площадь</span><span class="project_details__value">405
                             м²</span></li>

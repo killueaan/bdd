@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="stylesheet" href="assets/style/project.css">
     <link rel="stylesheet" href="assets/style/service.css">
+    <link rel="stylesheet" href="assets/style/catalog.css">
 </head>
 
 <body>
@@ -20,7 +21,7 @@
                     <img src="assets/images/logo/bdd_logo_ru.svg" alt="Логотип">
                 </a>
             </div>
-            <nav class="header_nav header_rc">
+            <nav class="header_nav header_rc" id="header-nav">
                 <div class="header_nav__item header_dropdown">
                     <button type="button" class="header_link header_dropdown__toggle" aria-expanded="false"
                         aria-controls="services-menu">
@@ -105,6 +106,12 @@
                 <span class="header_divider" aria-hidden="true"></span>
 
                 <button type="button" class="header_cta tertiary_btn">Заказать проект</button>
+                <button type="button" class="header_burger" aria-label="Открыть меню" aria-expanded="false"
+                    aria-controls="header-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
@@ -283,38 +290,36 @@
                 <div class="section_top">
                     <h2 class="project_title_accent h2_rc">какой получилась квартира</h2>
                 </div>
-                <div class="swiper project_who__swiper">
-                    <div class="swiper-wrapper project_who__list design">
-                        <article class="swiper-slide project_who__card">
-                            <div class="project_who__image">
-                                <img src="./assets/images/case_page/scenarios-1-design.jpg" alt="" class="cover">
-                            </div>
-                            <h3 class="project_who__title h5_rc">Современная классика</h3>
-                            <p class="project_who__text body_medium_mr">Основное направление интерьера
-                            </p>
-                        </article>
-                        <article class="swiper-slide project_who__card">
-                            <div class="project_who__image">
-                                <img src="./assets/images/case_page/scenarios-2-design.jpg" alt="" class="cover">
-                            </div>
-                            <h3 class="project_who__title h5_rc">Светлая палитра</h3>
-                            <p class="project_who__text body_medium_mr">База, на которой строится весь интерьер
-                            </p>
-                        </article>
-                        <article class="swiper-slide project_who__card">
-                            <div class="project_who__image">
-                                <img src="./assets/images/case_page/scenarios-3-design.jpg" alt="" class="cover">
-                            </div>
-                            <h3 class="project_who__title h5_rc">Немного гламура</h3>
-                            <p class="project_who__text body_medium_mr">Акценты, которые добавляют квартире характер
-                            </p>
-                        </article>
-                    </div>
+                <div class=" project_who__list design">
+                    <article class=" project_who__card">
+                        <div class="project_who__image">
+                            <img src="./assets/images/case_page/scenarios-1-design.jpg" alt="" class="cover">
+                        </div>
+                        <h3 class="project_who__title h5_rc">Современная классика</h3>
+                        <p class="project_who__text body_medium_mr">Основное направление интерьера
+                        </p>
+                    </article>
+                    <article class=" project_who__card">
+                        <div class="project_who__image">
+                            <img src="./assets/images/case_page/scenarios-2-design.jpg" alt="" class="cover">
+                        </div>
+                        <h3 class="project_who__title h5_rc">Светлая палитра</h3>
+                        <p class="project_who__text body_medium_mr">База, на которой строится весь интерьер
+                        </p>
+                    </article>
+                    <article class=" project_who__card">
+                        <div class="project_who__image">
+                            <img src="./assets/images/case_page/scenarios-3-design.jpg" alt="" class="cover">
+                        </div>
+                        <h3 class="project_who__title h5_rc">Немного гламура</h3>
+                        <p class="project_who__text body_medium_mr">Акценты, которые добавляют квартире характер
+                        </p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="project_gallery section">
+        <section class="project_gallery project_case section">
             <div class="container">
                 <div class="section_top">
                     <h2 class="project_gallery__title h2_rc">

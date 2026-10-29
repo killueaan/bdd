@@ -18,7 +18,7 @@
                     <img src="assets/images/logo/bdd_logo_ru.svg" alt="Логотип">
                 </a>
             </div>
-            <nav class="header_nav header_rc">
+            <nav class="header_nav header_rc" id="header-nav">
                 <div class="header_nav__item header_dropdown">
                     <button type="button" class="header_link header_dropdown__toggle" aria-expanded="false"
                         aria-controls="services-menu">
@@ -103,13 +103,19 @@
                 <span class="header_divider" aria-hidden="true"></span>
 
                 <button type="button" class="header_cta tertiary_btn">Заказать проект</button>
+                <button type="button" class="header_burger" aria-label="Открыть меню" aria-expanded="false"
+                    aria-controls="header-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
     <main>
         <section class="hero_section">
             <div class="hero_image_bg">
-            <img class="hero_image cover" src="./assets/images/contacts/hero_section.jpg" alt="Главный экран">
+                <img class="hero_image cover" src="./assets/images/contacts/hero_section.jpg" alt="Главный экран">
             </div>
             <div class="hero_block">
                 <div class="hero_block_content container">
@@ -167,7 +173,7 @@
             </div>
         </section>
 
-         <section class="feedback section">
+        <section class="feedback section">
             <div class="container">
                 <div class="feedback_block">
                     <div class="plaque">
@@ -279,7 +285,9 @@
             <div class="footer_media__content">
                 <div class="footer_title_slogan">
                     <h2 class="footer_media__title">BDD GROUP</h2>
-                    <div class="slogan_footer chip orange_chip"><h5 class="h5_rc">Проектируем с юмором</h5></div>
+                    <div class="slogan_footer chip orange_chip">
+                        <h5 class="h5_rc">Проектируем с юмором</h5>
+                    </div>
                 </div>
                 <a href="/" class="footer_media__chip chip_1 tabs_medium_rc orange_chip">
                     Обсудить дом
@@ -332,7 +340,8 @@
 
                     <div class="footer_col">
                         <p class="footer_col__title h5_rc">Работаем в будни<br>с 9:00 до 18:00</p>
-                        <p class="footer_col__text body_reg_mr">Но по телефону можем говорить до&nbsp;21:00. А если вы нам
+                        <p class="footer_col__text body_reg_mr">Но по телефону можем говорить до&nbsp;21:00. А если вы
+                            нам
                             очень
                             понравитесь, готовы поработать в&nbsp;выходные (но это не точно)</p>
                     </div>

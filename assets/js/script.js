@@ -109,6 +109,33 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     });
 })
+
+// Мобильное меню
+const burger = document.querySelector('.header_burger');
+
+if (burger) {
+    const headerEl = burger.closest('.header');
+
+    const setMenu = (open) => {
+        headerEl.classList.toggle('is-menu-open', open);
+        burger.setAttribute('aria-expanded', open);
+        burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+        document.body.style.overflow = open ? 'hidden' : '';
+    };
+
+    burger.addEventListener('click', () => {
+        setMenu(!headerEl.classList.contains('is-menu-open'));
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setMenu(false);
+    });
+
+    window.matchMedia('(min-width: 1201px)').addEventListener('change', (e) => {
+        if (e.matches) setMenu(false);
+    });
+}
+
 // services
 document.querySelectorAll('.header_dropdown').forEach((dropdown) => {
     const toggle = dropdown.querySelector('.header_dropdown__toggle');
@@ -640,11 +667,6 @@ initMobileSwiper('.what_is_swiper', {
 });
 initMobileSwiper('.tasks_swiper', {
     slidesPerView: 1.25,
-    spaceBetween: 12,
-    grabCursor: true,
-});
-initMobileSwiper('.project_who__swiper', {
-    slidesPerView: 1.35,
     spaceBetween: 12,
     grabCursor: true,
 });
