@@ -459,13 +459,12 @@ initLoopSlider('.project_get__swiper', 5, {
     slidesPerView: 'auto',
     spaceBetween: 16,
     breakpoints: {
-        0: { spaceBetween: 12 },
         769: { spaceBetween: 16 },
     },
 });
 initMobileSwiper('.project_get__swiper', {
-    slidesPerView: 1.15,
-    spaceBetween: 12,
+    slidesPerView: 1,
+    spaceBetween: 16,
     grabCursor: true,
 });
 // etages
@@ -586,7 +585,6 @@ initLoopSlider('.team_swiper', 3, {
     slidesPerView: 1.15,
     spaceBetween: 12,
     watchSlidesProgress: true,
-    loop: true,
     grabCursor: true,
     speed: 500,
     autoplay: {
@@ -609,14 +607,19 @@ const teamMobileEl = document.querySelector('.team_mobile_swiper');
 
 if (teamMobileEl) {
     const mq = window.matchMedia('(max-width: 767px)');
+    const teamWrapper = teamMobileEl.querySelector('.team_cards');
+    const joinCard = teamWrapper.querySelector('.team_card--join');
+    const joinNext = joinCard ? joinCard.nextElementSibling : null; // исходное место карточки
     let teamSwiper = null;
 
     const toggleTeamSwiper = () => {
         if (mq.matches && !teamSwiper) {
+            // на мобилке «Присоединяйся» — последний слайд
+            if (joinCard) teamWrapper.appendChild(joinCard);
+
             teamSwiper = new Swiper(teamMobileEl, {
                 slidesPerView: 1.19,
                 spaceBetween: 12,
-                loop: true,
                 grabCursor: true,
                 speed: 500,
                 autoplay: {
@@ -628,6 +631,9 @@ if (teamMobileEl) {
         } else if (!mq.matches && teamSwiper) {
             teamSwiper.destroy(true, true);
             teamSwiper = null;
+
+            // возвращаем карточку на десктопное место
+            if (joinCard && joinNext) teamWrapper.insertBefore(joinCard, joinNext);
         }
     };
 
@@ -670,3 +676,52 @@ initMobileSwiper('.tasks_swiper', {
     spaceBetween: 12,
     grabCursor: true,
 });
+// partners
+const createPartnersSwiper = (selector, reverse = false) => {
+    const el = document.querySelector(selector);
+    if (!el) return null;
+
+    // дублируем слайды, чтобы хватило для loop на любой ширине экрана
+    const wrapper = el.querySelector('.swiper-wrapper');
+    const original = [...wrapper.children];
+    const minSlides = 20;
+
+    while (original.length && wrapper.children.length < minSlides) {
+        original.forEach((slide) => {
+            const clone = slide.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            clone.setAttribute('tabindex', '-1');
+
+            // в копиях h3 → span, чтобы не дублировать заголовки на странице
+            const title = clone.querySelector('h3');
+            if (title) {
+                const span = document.createElement('span');
+                span.className = title.className;
+                span.textContent = title.textContent;
+                title.replaceWith(span);
+            }
+
+            wrapper.appendChild(clone);
+        });
+    }
+
+    return new Swiper(el, {
+        slidesPerView: 'auto',
+        spaceBetween: 12,
+        loop: true,
+        speed: 5000,
+        allowTouchMove: false,
+        watchOverflow: false,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            reverseDirection: reverse,
+        },
+        breakpoints: {
+            768: { spaceBetween: 16 },
+        },
+    });
+};
+
+createPartnersSwiper('.partners_swiper--right', true);
+createPartnersSwiper('.partners_swiper--left');

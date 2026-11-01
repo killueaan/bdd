@@ -167,7 +167,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('catalog-filter');
     const list = document.querySelector('.catalog_list');
     if (!form || !list) return;
+    const filtersBtn = form.querySelector('.catalog_filter__btn');
 
+    filtersBtn?.addEventListener('click', () => {
+        const isOpen = form.classList.toggle('is-filters-open');
+        filtersBtn.setAttribute('aria-expanded', isOpen);
+
+        if (isOpen) {
+            form.querySelectorAll('.catalog_filter__range').forEach((range) => range._lock?.());
+        }
+    });
     const cards = [...list.children].filter((el) => el.tagName === 'ARTICLE' && !el.classList.contains('promo_card'));
     cards.forEach((card, i) => { card.dataset.order = i; });
 
@@ -175,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const countEl = document.querySelector('.catalog_count');
     const chipsBox = document.querySelector('.catalog_filter_chips');
     const emptyEl = document.querySelector('.catalog_empty');
-    const PROMO_AFTER = 6; 
+    const PROMO_AFTER = 6;
 
     const selects = [...form.querySelectorAll('.select__native[name]')];
 
@@ -325,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('input', update);
     form.addEventListener('change', update);
-    form.addEventListener('submit', (e) => e.preventDefault()); 
+    form.addEventListener('submit', (e) => e.preventDefault());
 
     chipsBox?.addEventListener('click', (e) => {
         const btn = e.target.closest('[data-reset]');
@@ -351,8 +360,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (directions) {
         const ruler = directions.querySelector('.directions_ruler');
         const btns = [...directions.querySelectorAll('.directions_btn')];
-        const STEP = 30;        
-        const TAPE_SPEED = 3;   
+        const STEP = 30;
+        const TAPE_SPEED = 3;
         let markerX = 0;
         let tapeSpin = 0;
 
@@ -402,5 +411,5 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', () => moveTo(activeBtn(), false));
     }
 
-    render(); 
+    render();
 });

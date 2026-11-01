@@ -782,6 +782,9 @@
         backdrop-filter: blur(20px);
         transform: translateY(-50%);
     }
+    .project_case .project_gallery__slider .slider_arrow:hover {
+        background: var(--orange500);
+    }
 
     .project_case .project_gallery__slider .slider_arrow svg {
         width: 20px;

@@ -1,0 +1,246 @@
+
+/* blog */
+
+.blog_title {
+    display: flex;
+    flex-direction: column;
+    color: var(--neutral900);
+}
+
+.blog_title_big {
+    padding-left: 104px;
+    margin-top: -4px;
+    color: #675845;
+}
+
+.blog_title_accent {
+    color: var(--orange500);
+}
+
+.blog_btn {
+    margin: 24px 0;
+}
+
+.blog_quote {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 24px;
+    padding: 32px;
+    color: var(--neutral600);
+}
+
+.quote_text {
+    max-width: 888px;
+}
+
+.blog_quote_image {
+    position: absolute;
+    left: 34px;
+    bottom: 0;
+    height: 179px;
+}
+
+.blog_slider {
+    position: relative;
+}
+
+.blog_swiper .swiper-slide {
+    transition: none;
+}
+
+.blog_card {
+    height: auto;
+    display: flex !important;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.blog_card__image {
+    position: relative;
+    display: block;
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.blog_card__image img {
+    transition: transform .5s ease;
+}
+
+.blog_card__image:hover img {
+    transform: scale(1.06);
+}
+
+.card__tags {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.blog_card__image .card__tags {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+}
+
+.card__tags .chip_light_filled,
+.card__tags .chip_dark_filled {
+    border-radius: 4px;
+}
+
+.blog_card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px 0 4px 4px;
+}
+
+.blog_card__title a {
+    color: var(--neutral900);
+    max-width: 100%;
+}
+
+.blog_card__title a:hover {
+    color: var(--orange500);
+}
+
+.blog_card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--neutral600);
+}
+
+.date {
+    color: var(--neutral500);
+}
+
+.blog_card__link {
+    color: var(--orange500);
+    display: flex;
+    gap: 4px;
+}
+
+.blog_card__link::after {
+    content: "";
+    width: 19px;
+    height: 19px;
+    flex: 0 0 19px;
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19 19' fill='none'%3E%3Cpath d='M5.542 13.458L13.459 5.542M5.542 5.542H13.459V13.458' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19 19' fill='none'%3E%3Cpath d='M5.542 13.458L13.459 5.542M5.542 5.542H13.459V13.458' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.blog_card__link:hover {
+    color: var(--orange700);
+}
+
+.blog_arrow__prev {
+    left: -60px;
+}
+
+.blog_arrow__next {
+    right: -60px;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.blog_arrow:hover {
+    color: var(--orange500);
+}
+.blog_cards{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 24px;
+}
+
+@media(max-width:768px){
+
+    /* blog */
+    .blog .container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .blog_cards{
+        grid-template-columns: 1fr;
+    }
+
+    .blog_swiper {
+        margin: 0 -16px;
+        padding: 0 16px;
+    }
+
+    .blog .section_top {
+        display: contents;
+    }
+
+    .blog_title {
+        order: 0;
+    }
+
+    .blog_quote {
+        order: 1;
+        margin-bottom: 8px;
+    }
+
+    .blog_slider {
+        order: 2;
+    }
+.blog:has(.blog_cards) .blog_btn {
+    order: 1;
+            margin-top: -4px;
+        margin-bottom: 8px;
+}
+
+.blog:has(.blog_cards) .blog_quote {
+    order: 2;
+}
+
+.blog:has(.blog_cards) .blog_cards {
+    order: 3;
+}
+    .blog_btn {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 8px;
+    }
+
+    .blog_title_big {
+        padding-left: 0;
+        font-size: 44px;
+        margin-top: 6px;
+    }
+
+    .blog_title span.h2_rc {
+        font-size: 24px;
+    }
+
+    .card__tags .chip {
+        font-size: 14px;
+    }
+
+    .blog_quote_image {
+        display: none;
+    }
+
+    .blog_quote {
+        background: none;
+        padding: 0;
+    }
+
+    .quote_text {
+        font-size: 16px;
+    }
+
+    .blog_card__image {
+        height: 240px;
+    }
+
+    .blog_card__image img {
+        object-position: center 90%;
+    }
+}

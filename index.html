@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="stylesheet" href="assets/style/service.css">
     <link rel="stylesheet" href="assets/style/contacts.css">
+    <link rel="stylesheet" href="assets/style/blog.css">
 </head>
 
 <body>
     <header class="header">
         <div class="header_container">
             <div class="header_logo">
-                <a href="/" class="header_logo__image">
+                <a href="./index.html" class="header_logo__image">
                     <img src="assets/images/logo/bdd_logo_ru.svg" alt="Логотип">
                 </a>
             </div>
@@ -33,23 +34,23 @@
 
                     <div class="header_dropdown__panel" id="services-menu">
                         <ul class="header_dropdown__list header_medium_rc">
-                            <li><a href="/service_page_pzu.html/" class="header_dropdown__link is-active"
+                            <li><a href="./service_page_pzu.html" class="header_dropdown__link is-active"
                                     data-img="assets/images/pzu/hero_section.jpg">План застройки участка</a></li>
-                            <li><a href="/service_page_interior.html" class="header_dropdown__link"
+                            <li><a href="./service_page_interior.html" class="header_dropdown__link"
                                     data-img="assets/images/interior/hero_section_interior.jpg">Дизайн интерьера</a>
                             </li>
                             <li><a href="/services/landscape/" class="header_dropdown__link"
                                     data-img="assets/images/interior/hero_section_interior.jpg">Ландшафтный дизайн</a>
                             </li>
-                            <li><a href="/service_page_project.html" class="header_dropdown__link"
+                            <li><a href="./service_page_project.html" class="header_dropdown__link"
                                     data-img="assets/images/service_project/hero_section_project.jpg">Проектирование</a>
                             </li>
                             <li><a href="/services/facades/" class="header_dropdown__link"
                                     data-img="assets/images/service_project/hero_section_project.jpg">Реновация
                                     фасадов</a></li>
-                            <li><a href="/service_page_supervision.html" class="header_dropdown__link"
+                            <li><a href="./service_page_supervision.html" class="header_dropdown__link"
                                     data-img="assets/images/supervision/hero_section.jpg">Стройнадзор</a></li>
-                            <li><a href="/service_page_bddmedia.html" class="header_dropdown__link"
+                            <li><a href="./service_page_bddmedia.html" class="header_dropdown__link"
                                     data-img="assets/images/bddmedia/hero_section.jpg">Коммерция и реклама</a></li>
                             <li><a href="/services/consulting/" class="header_dropdown__link"
                                     data-img="assets/images/supervision/hero_section.jpg">Консультирование</a></li>
@@ -59,11 +60,16 @@
                     </div>
                 </div>
 
-                <a href="/about/" class="header_link">О компании</a>
-                <a href="/portfolio/" class="header_link">Портфолио</a>
-                <a href="/projects/" class="header_link">Готовые проекты</a>
-                <a href="/blog/" class="header_link">Блог</a>
-                <a href="/contacts/" class="header_link">Контакты</a>
+                <a href="./about/" class="header_link">О компании</a>
+                <a href="./portfolio/" class="header_link">Портфолио</a>
+                <a href="./projects/" class="header_link">Готовые проекты</a>
+                <a href="./blog/" class="header_link">Блог</a>
+                <a href="./contacts/" class="header_link">Контакты</a>
+                <div class="header_nav__footer">
+                    <button type="button" class="primary_btn orange_btn header_nav__cta tertiary_btn">
+                        Заказать проект
+                    </button>
+                </div>
             </nav>
             <div class="header_buttons">
                 <ul class="header_contacts">
@@ -218,7 +224,7 @@
                     <div class="services_item__bg"><img src="./assets/images/main/advertisement.jpg" alt=""
                             class="cover"></div>
                     <img src="./assets/images/main/advertisement_1.png" alt="" class="services_item__person">
-                    <h4 class="services_item__title h4_rc">Коммерция и реклама</h4>
+                    <h4 class="services_item__title h4_rc">Реклама</h4>
                 </a>
             </div>
         </section>
@@ -515,6 +521,166 @@
             </div>
         </section>
 
+        <section class="partners section">
+            <div class="container">
+                <div class="section_top">
+                    <h2 class="section_title h2_rc">Постоянно на связи<span>с партнерами BDD</span></h2>
+                </div>
+            </div>
+
+            <div class="partners_marquee">
+                <!-- 1 ряд: едет вправо -->
+                <div class="swiper partners_swiper partners_swiper--right">
+                    <div class="swiper-wrapper">
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/zhemchuzhina.svg" alt="Логотип Окская жемчужина"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">Окская жемчужина</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/chulan.svg" alt="Логотип Chulan"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">Chulan – ресторан и бар</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/fest.svg" alt="Логотип парк-отеля Фестиваль"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">Парк-отель «Фестиваль»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/greenwich.svg" alt="Логотип ресторана Гринвич"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">Ресторан «Гринвич»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/pivnica.svg" alt="Логотип Барская пивница"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">Барская пивница</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/hookah_place_lab.svg" alt="Логотип Hookah Place Lab"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">Hookah Place Lab</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/flat.svg" alt="Логотип кальянной Flat"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">Кальянная «Flat»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/zhivago.svg" alt="Логотип банка Живаго"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">Банк «Живаго»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/casa_maria.svg" alt="Логотип ресторана Casa Maria"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">Ресторан «Casa Maria»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/grafin.svg" alt="Логотип ресторана Графин"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">Ресторан «Графин»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/edinstvo.svg" alt="Логотип ГК Единство"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">ГК «Единство»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/praga.svg" alt="Логотип СК Прага"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">СК «Прага»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2 ряд: едет влево -->
+                <div class="swiper partners_swiper partners_swiper--left">
+                    <div class="swiper-wrapper">
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/aragon.svg" alt="Логотип отеля Арагон"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">Отель «Арагон»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/snegiri.svg" alt="Логотип поселка Снегири"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">Поселок «Снегири»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/interstroy.svg" alt="Логотип СК Интерстрой"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">СК «Интерстрой»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/marmax.svg" alt="Логотип СК Мармакс"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">СК «Мармакс»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/4rooms.svg" alt="Логотип ТЦ 4 комнаты"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">ТЦ «4 комнаты»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/millenium.svg" alt="Логотип КП Миллениум Парк"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">КП «Миллениум Парк»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/volga_village.svg" alt="Логотип КП Волга Вилладж"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">КП «Волга Вилладж»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/repino.svg" alt="Логотип КП Репино Парк"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">КП «Репино Парк»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/livinwood.svg" alt="Логотип КП Морские Террасы"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">КП «Морские Террасы»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/dolina.svg" alt="Логотип КП Южная Долина"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">КП «Южная Долина»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                        <a href="#" class="swiper-slide partner_card" target="_blank" rel="noopener">
+                            <img src="./assets/images/partners/primavera.svg" alt="Логотип КП Примавера"
+                                class="partner_card__logo">
+                            <h3 class="partner_card__title">КП «Примавера»</h3>
+                            <span class="partner_card__link">Перейти на сайт</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="blog main section">
             <div class="container">
                 <div class="section_top">
@@ -732,7 +898,7 @@
     </main>
     <footer>
         <div class="footer_media">
-            <img class="cover" src="assets/images/service_page/footer.jpg" alt="Подвал">
+            <img class="footer_media_img cover" src="assets/images/service_page/footer.jpg" alt="Подвал">
             <div class="footer_media__content">
                 <div class="footer_title_slogan">
                     <h2 class="footer_media__title">BDD GROUP</h2>
