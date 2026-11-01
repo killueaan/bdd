@@ -900,10 +900,6 @@
         letter-spacing: -0.5px;
     }
 
-    .display-none {
-        display: none;
-    }
-
     .text_block__v1 {
         gap: 16px;
     }
@@ -1276,6 +1272,10 @@
     /* formats */
     .formats_cards {
         grid-template-columns: 1fr;
+    }
+
+    .what_is_supervisions_cards {
+        gap: 0;
     }
 
     .interior .format_card {

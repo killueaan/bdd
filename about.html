@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/style/service.css">
     <link rel="stylesheet" href="assets/style/contacts.css">
     <link rel="stylesheet" href="assets/style/about.css">
+    <link rel="stylesheet" href="assets/style/blog.css">
 </head>
 
 <body>
@@ -60,11 +61,11 @@
                     </div>
                 </div>
 
-                <a href="./about/" class="header_link">О компании</a>
-                <a href="./portfolio/" class="header_link">Портфолио</a>
-                <a href="./projects/" class="header_link">Готовые проекты</a>
-                <a href="./blog/" class="header_link">Блог</a>
-                <a href="./contacts/" class="header_link">Контакты</a>
+                <a href="./about.html" class="header_link">О компании</a>
+                <a href="./portfolio.html" class="header_link">Портфолио</a>
+                <a href="./projects.html" class="header_link">Готовые проекты</a>
+                <a href="./blog.html" class="header_link">Блог</a>
+                <a href="./contacts.html" class="header_link">Контакты</a>
                 <div class="header_nav__footer">
                     <button type="button" class="primary_btn orange_btn header_nav__cta tertiary_btn">
                         Заказать проект
@@ -154,6 +155,13 @@
                 <div class="history_content">
                     <ul class="history_dates">
                         <li class="history_item">
+                            <button type="button" class="history_date h2_rc" data-id="2000">2000</button>
+                            <div class="history_text">
+                                <h3 class="history_text__title buttons_medium_rc">Компания в 2000</h3>
+                                <p class="body_medium_mr">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                            </div>
+                        </li>
+                        <li class="history_item">
                             <button type="button" class="history_date h2_rc" data-id="2024">2024</button>
                             <div class="history_text">
                                 <h3 class="history_text__title buttons_medium_rc">Компания в 2024</h3>
@@ -175,14 +183,6 @@
                                 <p class="body_medium_mr">Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et
                                     massa mi.
                                     Aliquam in hendrerit urna.</p>
-                                <p class="body_medium_mr">Lorem ipsum dolor sit amet consectetur</p>
-                            </div>
-                        </li>
-                        <li class="history_item">
-                            <button type="button" class="history_date h2_rc" data-id="2000">2000</button>
-                            <div class="history_text">
-                                <h3 class="history_text__title buttons_medium_rc">Компания в 2000</h3>
-                                <p class="body_medium_mr">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
                             </div>
                         </li>
                     </ul>
@@ -229,14 +229,14 @@
         <section class="team_section section">
             <div class="container">
                 <div class="section_top">
-                    <h2 class="section_title h2_rc">Настоящие спецы<span>команды Бюро Dобрых Dел</span></h2>
+                    <h2 class="section_title h2_rc">Как мы набираем экспертов<span>в команду BDD</span></h2>
                 </div>
 
                 <div class="team_slider">
                     <div class="swiper team_swiper">
                         <div class="swiper-wrapper">
 
-                            <article class="team_card swiper-slide team_card--boss">
+                            <article class="swiper-slide team_card team_card--boss">
                                 <img class="team_card__img" src="./assets/images/team/kirichenko.jpg"
                                     alt="Михаил Кириченко">
                                 <div class="team_card__head">
@@ -246,7 +246,7 @@
                                 </p>
                             </article>
 
-                            <article class="team_card swiper-slide">
+                            <article class="swiper-slide team_card team_card--leonid">
                                 <img class="team_card__img" src="./assets/images/team/leonid.jpg" alt="Леонид">
                                 <div class="team_card__head">
                                     <h3 class="team_card__name h4_rc">Леонид</h3>
@@ -259,7 +259,7 @@
                                 </div>
                             </article>
 
-                            <article class="team_card swiper-slide">
+                            <article class="swiper-slide team_card team_card--vlad">
                                 <img class="team_card__img" src="./assets/images/team/vlad.jpg" alt="Влад">
                                 <div class="team_card__head">
                                     <h3 class="team_card__name h4_rc">Влад</h3>
@@ -274,7 +274,7 @@
                                 </div>
                             </article>
 
-                            <article class="team_card swiper-slide">
+                            <article class="swiper-slide team_card team_card--dari">
                                 <img class="team_card__img" src="./assets/images/team/dari.jpg" alt="Дари">
                                 <div class="team_card__head">
                                     <h3 class="team_card__name h4_rc">Дари</h3>
@@ -287,7 +287,7 @@
                                 </div>
                             </article>
 
-                            <article class="team_card swiper-slide team_card--join">
+                            <article class="swiper-slide team_card team_card--join">
                                 <img class="team_card__img" src="./assets/images/team/team.jpg" alt="Команда BDD GROUP">
                                 <div class="team_card__head">
                                     <h3 class="team_card__name h4_rc">Присоединяйся и ты к&nbsp;нашей команде</h3>
@@ -296,7 +296,7 @@
                                     командой</a>
                             </article>
 
-                            <article class="team_card swiper-slide">
+                            <article class="swiper-slide team_card team_card--ec">
                                 <img class="team_card__img" src="./assets/images/team/ec.jpg" alt="Ес">
                                 <div class="team_card__head">
                                     <h3 class="team_card__name h4_rc">Ес</h3>
@@ -310,7 +310,7 @@
                                 </div>
                             </article>
 
-                            <article class="team_card swiper-slide">
+                            <article class="swiper-slide team_card team_card--konstantin">
                                 <img class="team_card__img" src="./assets/images/team/konstantin.jpg" alt="Константин">
                                 <div class="team_card__head">
                                     <h3 class="team_card__name h4_rc">Константин</h3>
@@ -324,7 +324,7 @@
                                 </div>
                             </article>
 
-                            <article class="team_card swiper-slide">
+                            <article class="swiper-slide team_card team_card--katya">
                                 <img class="team_card__img" src="./assets/images/team/katya.jpg" alt="Катя">
                                 <div class="team_card__head">
                                     <h3 class="team_card__name h4_rc">Катя</h3>
@@ -338,7 +338,7 @@
                                 </div>
                             </article>
 
-                            <article class="team_card swiper-slide">
+                            <article class="swiper-slide team_card team_card--alyona">
                                 <img class="team_card__img" src="./assets/images/team/alyona.jpg" alt="Алёна">
                                 <div class="team_card__head">
                                     <h3 class="team_card__name h4_rc">Алло? Алёна!</h3>
@@ -351,21 +351,17 @@
                                 </div>
                             </article>
                         </div>
-                        <button type="button" class="slider_arrow slider_arrow__prev team_arrow__prev"
-                            aria-label="Назад">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="51" height="51" viewBox="0 0 51 51"
-                                fill="none">
-                                <path d="M30.5 41.5L15.5 26.5L30.5 11.5" stroke="#171716" stroke-width="4.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg> </button>
-                        <button type="button" class="slider_arrow slider_arrow__next team_arrow__next"
-                            aria-label="Вперёд">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="51" height="51" viewBox="0 0 51 51"
-                                fill="none">
-                                <path d="M30.5 41.5L15.5 26.5L30.5 11.5" stroke="#171716" stroke-width="4.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg> </button>
                     </div>
+                    <button type="button" class="slider_arrow slider_arrow__prev team_arrow__prev" aria-label="Назад">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="51" height="51" viewBox="0 0 51 51" fill="none">
+                            <path d="M30.5 41.5L15.5 26.5L30.5 11.5" stroke="currentColor" stroke-width="4.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> </button>
+                    <button type="button" class="slider_arrow slider_arrow__next team_arrow__next" aria-label="Вперёд">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="51" height="51" viewBox="0 0 51 51" fill="none">
+                            <path d="M30.5 41.5L15.5 26.5L30.5 11.5" stroke="currentColor" stroke-width="4.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> </button>
                 </div>
                 <div class="team_information_cards">
                     <div class="team_info_card card">

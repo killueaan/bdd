@@ -509,99 +509,55 @@ initLoopSlider('.reviews_swiper', 3, {
 const historyList = document.querySelector('.history_dates');
 
 if (historyList) {
+    const historyItems = historyList.querySelectorAll('.history_item');
     const historyImgs = document.querySelectorAll('.history_img');
-    const HISTORY_ACTIVE_INDEX = 2;
-    let historyBusy = false;
 
     historyList.addEventListener('click', (e) => {
         const btn = e.target.closest('.history_date');
-        if (!btn || historyBusy) return;
+        if (!btn) return;
 
         const item = btn.closest('.history_item');
         if (item.classList.contains('is-active')) return;
 
-        historyBusy = true;
-        const items = [...historyList.children];
-        const shift = HISTORY_ACTIVE_INDEX - items.indexOf(item);
-
-        const first = new Map(items.map(el => [el, {
-            top: el.getBoundingClientRect().top,
-            h: el.querySelector('.history_date').getBoundingClientRect().height,
-        }]));
-
-        historyList.classList.add('no-anim');
-
-        const wrapped = new Set();
-        for (let i = 0; i < Math.abs(shift); i++) {
-            if (shift > 0) {
-                const last = historyList.lastElementChild;
-                historyList.prepend(last);
-                wrapped.add(last);
-            } else {
-                const firstEl = historyList.firstElementChild;
-                historyList.append(firstEl);
-                wrapped.add(firstEl);
-            }
-        }
-
-        items.forEach(el => {
+        historyItems.forEach((el) => {
             const isActive = el === item;
             el.classList.toggle('is-active', isActive);
             el.querySelector('.history_date').toggleAttribute('aria-current', isActive);
         });
 
-        items.forEach(el => {
-            const date = el.querySelector('.history_date');
-            const f = first.get(el);
-            const scale = f.h / date.getBoundingClientRect().height;
-            date.style.transform = `scale(${scale})`;
-
-            if (wrapped.has(el)) {
-                el.style.transform = `translateY(${shift > 0 ? -40 : 40}px)`;
-                el.style.opacity = '0';
-            } else {
-                el.style.transform = `translateY(${f.top - el.getBoundingClientRect().top}px)`;
-            }
+        historyImgs.forEach((img) => {
+            img.classList.toggle('is-active', img.dataset.id === btn.dataset.id);
         });
-
-        historyList.offsetHeight;
-        historyList.classList.remove('no-anim');
-
-        items.forEach(el => {
-            el.style.transform = '';
-            el.style.opacity = '';
-            el.querySelector('.history_date').style.transform = '';
-        });
-
-        historyImgs.forEach(img => {
-            img.classList.toggle('is-active', img.dataset.id === item.dataset.id);
-        });
-
-        setTimeout(() => { historyBusy = false; }, 600);
     });
 }
 // team
-initLoopSlider('.team_swiper', 3, {
-    slidesPerView: 1.15,
-    spaceBetween: 12,
-    watchSlidesProgress: true,
-    grabCursor: true,
-    speed: 500,
-    autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-    },
-    navigation: {
-        prevEl: '.team_arrow__prev',
-        nextEl: '.team_arrow__next',
-    },
-    breakpoints: {
-        768: { slidesPerView: 2, spaceBetween: 18 },
-        1101: { slidesPerView: 3, spaceBetween: 18 },
-    },
-});
+const teamSwiperEl = document.querySelector('.team_swiper');
 
+if (teamSwiperEl) {
+    const teamSlider = teamSwiperEl.closest('.team_slider');
+
+    new Swiper(teamSwiperEl, {
+        slidesPerView: 1.15,
+        spaceBetween: 12,
+        loop: true,
+        watchSlidesProgress: true,
+        grabCursor: true,
+        speed: 500,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        navigation: {
+            prevEl: teamSlider.querySelector('.team_arrow__prev'),
+            nextEl: teamSlider.querySelector('.team_arrow__next'),
+        },
+        breakpoints: {
+            375: { slidesPerView: 1.18, spaceBetween: 16 },
+            1101: { slidesPerView: 3, spaceBetween: 16 },
+        },
+    });
+}
 // team mobile
 const teamMobileEl = document.querySelector('.team_mobile_swiper');
 
@@ -618,8 +574,8 @@ if (teamMobileEl) {
             if (joinCard) teamWrapper.appendChild(joinCard);
 
             teamSwiper = new Swiper(teamMobileEl, {
-                slidesPerView: 1.19,
-                spaceBetween: 12,
+                slidesPerView: 1.15,
+                spaceBetween: 16,
                 grabCursor: true,
                 speed: 500,
                 autoplay: {

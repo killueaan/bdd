@@ -11,7 +11,7 @@
 }
 
 /* history */
-
+/* history */
 .history_content {
     display: grid;
     grid-template-columns: 1fr 608px;
@@ -41,7 +41,7 @@
     text-transform: uppercase;
     color: var(--neutral500);
     opacity: 0.5;
-    transition: color .3s ease, font-size .3s ease;
+    transition: color .3s ease, font-size .3s ease, opacity .3s ease;
 }
 
 .history_date:hover {
@@ -94,6 +94,7 @@
 .history_img {
     position: absolute;
     inset: 0;
+    opacity: 0;
     transition: opacity .5s ease;
 }
 
@@ -101,15 +102,25 @@
     opacity: 1;
 }
 
+
 /* team */
+.team_section {
+    overflow-x: clip;
+}
+
+.team_swiper {
+    overflow: visible !important;
+    clip-path: inset(-50px -100vw -50px 0);
+}
+
 .team_swiper .team_card {
     height: auto;
     aspect-ratio: 465 / 423;
-    transition: opacity .5s ease;
 }
 
-.team_swiper .swiper-slide:not(.swiper-slide-fully-visible) {
+.team_swiper .swiper-slide:not(.swiper-slide-visible) {
     opacity: .4;
+    pointer-events: none;
 }
 
 .team_slider .slider_arrow {
@@ -169,6 +180,7 @@
 @media(max-width:768px) {
 
     /* history */
+    /* history */
     .history_content {
         grid-template-columns: 1fr;
         gap: 16px;
@@ -180,8 +192,16 @@
         display: contents;
     }
 
-    .history_item:nth-child(-n+3) .history_date {
+    /* периоды до активного и сам активный — над фото */
+    .history_date {
         order: 1;
+        justify-self: start;
+        font-size: 32px;
+    }
+
+    /* периоды после активного — под текстом */
+    .history_item.is-active~.history_item .history_date {
+        order: 4;
     }
 
     .history_media {
@@ -191,15 +211,6 @@
 
     .history_item .history_text {
         order: 3;
-    }
-
-    .history_item:nth-child(n+4) .history_date {
-        order: 4;
-    }
-
-    .history_date {
-        justify-self: start;
-        font-size: 32px;
     }
 
     .history_item.is-active .history_date {
@@ -230,17 +241,16 @@
     }
 
     /* team */
+    .team_swiper {
+        clip-path: unset;
+    }
 
     .team_information_cards {
         grid-template-columns: 1fr;
     }
 
-    .team_swiper {
-        margin: 0 -16px;
-        padding: 0 16px;
-    }
-
     .team_info_card {
+
         padding: 16px;
     }
 
