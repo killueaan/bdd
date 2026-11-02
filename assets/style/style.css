@@ -345,8 +345,8 @@ main {
     letter-spacing: 0px;
 }
 
-.nowrap {
-    white-space: nowrap;
+.br-mob {
+    display: none;
 }
 
 /* btn */
@@ -580,7 +580,10 @@ main {
 .section_desription {
     max-width: 254px;
 }
-.display-none{display: inline;}
+
+.display-none {
+    display: inline;
+}
 
 /* header */
 
@@ -1938,6 +1941,7 @@ header::before {
     width: 100%;
     justify-content: center;
 }
+
 .team_slider {
     position: relative;
 }
@@ -2911,7 +2915,7 @@ header::before {
         align-items: stretch;
         gap: 0;
         box-sizing: border-box;
-        height: calc(100dvh - 65px);
+        height: calc(100vh - 56px);
         padding: 8px 16px 16px;
         overflow-y: auto;
         background: var(--neutral100);
@@ -3015,7 +3019,6 @@ header::before {
         letter-spacing: -2%;
         color: var(--neutral600);
     }
-
 
     .header_dropdown__link::before {
         content: none;
@@ -3133,6 +3136,10 @@ header::before {
         gap: 64px;
     }
 
+    .step_card {
+        gap: 24px;
+    }
+
     .steps {
         margin: 0;
     }
@@ -3165,6 +3172,14 @@ header::before {
         margin-top: 12px;
     }
 
+    .step_card__content.step_grid__3 {
+        gap: 32px;
+    }
+
+    .step_card:nth-child(3) .service_card__image img,.step_card:nth-child(5) .service_card__image img {
+        object-position: center 0;
+    }
+
     /* service_cards */
     .service_card__image {
         height: 240px;
@@ -3178,6 +3193,7 @@ header::before {
 
     .service_promo__header {
         max-width: 150px;
+        left: 16px;
     }
 
     .service_promo__slogan {
@@ -3188,14 +3204,19 @@ header::before {
         object-position: 45% 60%;
         object-fit: fill;
     }
+
+    .team_card__btn.project_btn_arrow {
+        margin: 0;
+    }
 }
 
 @media (max-width: 767px) {
-     .display-none {
+    .display-none {
         display: none;
     }
-    .nowrap {
-        white-space: wrap;
+
+    .br-mob {
+        display: inline;
     }
 
     .hero_black_rc {
@@ -3285,7 +3306,7 @@ header::before {
 
     .section_title span {
         padding-left: 88px;
-        margin-top: -4px;
+        margin-top: 0;
     }
 
     .section_title_span_first {
@@ -3309,7 +3330,7 @@ header::before {
 
     /* hero */
     .hero_section {
-        height: 90vh;
+        height: 80vh;
     }
 
     .hero_section::before,
@@ -3479,6 +3500,10 @@ header::before {
         border-radius: 4px;
     }
 
+    .main .consult_banner .plaque_text {
+        font-size: 16px;
+    }
+
     .consult_banner .plaque_text {
         font-weight: 600;
     }
@@ -3519,6 +3544,10 @@ header::before {
         justify-content: center;
     }
 
+    .consult_btn {
+        height: auto;
+    }
+
     .plaque,
     .main .plaque {
         top: -33px;
@@ -3547,7 +3576,8 @@ header::before {
     .team_section .section_top {
         display: contents;
     }
-      .team_swiper {
+
+    .team_swiper {
         margin: 0 -16px;
         padding: 0 16px;
     }
@@ -3725,7 +3755,7 @@ header::before {
 
     .review_card__avatar {
         top: -64px;
-        height: 194px;
+        max-height: 230px;
     }
 
     .review_card__badge img {
@@ -3770,7 +3800,8 @@ header::before {
 
     .requirement_card {
         height: auto;
-        min-height: 200px;
+        min-height: 133px;
+        gap: 31px;
         padding: 20px 16px;
     }
 
@@ -3921,6 +3952,7 @@ header::before {
     .plan_cta__inner {
         flex-direction: column;
         height: auto;
+        gap: 24px;
     }
 
     .plan_cta__media {
@@ -3947,7 +3979,9 @@ header::before {
     .plan_cta__title_main {
         text-align: center;
     }
-
+.case .plan_cta__title_main{
+    text-align: left;
+}
     .plan_cta__title {
         font-size: 24px;
     }
@@ -3999,7 +4033,7 @@ header::before {
         flex-direction: column;
         justify-content: flex-end;
         gap: 20px;
-        padding: 0 16px 24px;
+        padding: 0 16px 14px;
     }
 
     .footer_title_slogan {
@@ -4020,12 +4054,26 @@ header::before {
 
     .footer_media .footer_media__chip.chip_1 {
         display: flex;
+        gap: 4px;
         justify-content: center;
         position: static;
         width: 100%;
         transform: none;
+        font-size: 16px;
         padding: 12px 24px;
         border-radius: 4px;
+    }
+
+    .footer_media .footer_media__chip.chip_1::after {
+        content: "";
+        width: 19px;
+        height: 19px;
+        flex: 0 0 19px;
+        background-color: currentColor;
+        -webkit-mask:
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 17'%3E%3Cpath d='M2.833 8.5H14.167M9.917 12.75l4.25-4.25-4.25-4.25' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+        mask:
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 17'%3E%3Cpath d='M2.833 8.5H14.167M9.917 12.75l4.25-4.25-4.25-4.25' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
     }
 
     /* footer */
@@ -4177,5 +4225,11 @@ header::before {
         height: 58px;
         justify-content: center;
         gap: 24px;
+    }
+}
+
+@media(max-width:400px) {
+    .review_card__avatar {
+        max-height: 196px;
     }
 }

@@ -1,0 +1,9 @@
+.project_get .portfolio_card{
+    height: 350px;
+}
+.project_get .portfolio_card__image{
+    height: 270px;
+}
+.project_get__swiper .swiper-wrapper .portfolio_card__title {
+        font-size: 32px;
+    }

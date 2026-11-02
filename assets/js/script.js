@@ -464,7 +464,7 @@ initLoopSlider('.project_get__swiper', 5, {
 });
 initMobileSwiper('.project_get__swiper', {
     slidesPerView: 1,
-    spaceBetween: 16,
+    spaceBetween: 12,
     grabCursor: true,
 });
 // etages

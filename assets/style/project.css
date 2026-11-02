@@ -5,8 +5,29 @@
     z-index: 0;
 }
 
+.hero_section::before,
+.hero_section::after,
+.hero_block::before,
+.hero_block::after {
+    pointer-events: none;
+}
+
 .hero_swiper .swiper-slide {
     height: 100%;
+}
+
+.hero_block {
+    pointer-events: none;
+}
+
+.hero_breadcrumbs,
+.hero_progress {
+    pointer-events: auto;
+}
+
+.hero_swiper {
+    touch-action: pan-y;
+    /* вертикальный свайп листает страницу, горизонтальный слайды */
 }
 
 .hero_progress {
@@ -74,7 +95,7 @@
 }
 
 .project_info.case .project_info__item {
-    min-width: none;
+    min-width: 0;
 }
 
 .project_info__text {
@@ -157,6 +178,10 @@
 .project_about__body.is-open .project_about__text {
     -webkit-mask-image: none;
     mask-image: none;
+}
+
+.project_title_accent span {
+    color: var(--orange500);
 }
 
 .project_about__text p {
@@ -432,6 +457,7 @@
 }
 
 /* gallery */
+
 .gallery_tabs {
     position: absolute;
     top: 24px;
@@ -661,7 +687,7 @@
     .project_info__item {
         min-width: 163px;
     }
-
+    .project_info__item:nth-child(5){display: none;}
     .project_btn_arrow {
         width: 100%;
         justify-content: center;
@@ -684,9 +710,10 @@
     }
 
     /* gallery */
-    .project_gallery__title-main{
+    .project_gallery__title-main {
         padding-left: 84px;
     }
+
     .project_gallery__swiper {
         border-radius: 8px;
     }
@@ -740,7 +767,7 @@
         background: var(--orange500);
     }
 
-    .interior .project_gallery__slider .slider_arrow {
+    .project_gallery__slider .slider_arrow {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -753,60 +780,31 @@
         transform: none;
     }
 
-    .interior .project_gallery__slider .slider_arrow svg {
+    .project_gallery__slider .slider_arrow svg {
         width: 32px;
         height: 32px;
     }
 
-    .interior .project_gallery__prev {
+    .project_gallery__prev {
         left: 0;
     }
 
-    .interior .project_gallery__slider .project_gallery__next {
+    .project_gallery__slider .project_gallery__next {
         right: 0;
         transform: rotate(180deg);
     }
 
-    .project_case .project_gallery__slider .slider_arrow {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        top: 50%;
-        bottom: auto;
-        width: 40px;
-        height: 40px;
-        padding: 0;
-        border-radius: 4px;
-        background: var(--glass-dark-grey, #17171699);
-        -webkit-backdrop-filter: blur(20px);
-        backdrop-filter: blur(20px);
-        transform: translateY(-50%);
-    }
-    .project_case .project_gallery__slider .slider_arrow:hover {
-        background: var(--orange500);
-    }
-
-    .project_case .project_gallery__slider .slider_arrow svg {
-        width: 20px;
-        height: 20px;
-    }
-
-    .project_case .project_gallery__slider .slider_arrow svg path {
-        stroke: var(--neutral0);
-    }
-
-    .project_case .project_gallery__prev {
-        left: 12px;
-    }
-
-    .project_case .project_gallery__slider .project_gallery__next {
-        right: 12px;
-        transform: translateY(-50%) rotate(180deg);
+    .project_case .project_gallery__counter {
+        display: none;
     }
 
     /* project_plan */
     .project_plan__grid {
         grid-template-columns: 1fr;
+    }
+
+    .project_plan__image {
+        padding: 25px 16px;
     }
 
     /* project_who*/
@@ -829,24 +827,31 @@
         height: 300px;
     }
 
+    .project_page .project_who__card:nth-child(1) .project_who__image img {
+        object-position: center 10%;
+    }
+
     /* ca_media */
-    .case .plan_cta__inner{
+    .case .plan_cta__inner {
         gap: 24px;
     }
+
     .case .like_cta__media {
         width: auto;
         height: 248px;
         flex-shrink: 0;
     }
+
     .case .like_cta__img {
-       clip-path: none;
+        clip-path: none;
     }
 
     .case .plan_cta__content {
         position: relative;
         align-items: start;
     }
-    .case .plan_cta__title, .plan_cta__title_main{
+
+    .case .plan_cta__title {
         text-align: left;
     }
 
@@ -887,6 +892,7 @@
     .project_buy__head {
         gap: 0;
     }
+
     .project_details__table {
         padding: 4px 16px;
     }
@@ -907,4 +913,8 @@
         grid-column: 2;
     }
 
+    /* project_get */
+    .project_get__text {
+        font-size: 24px;
+    }
 }

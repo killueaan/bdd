@@ -266,6 +266,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    /* grid-template-rows убрать */
 }
 
 .media_partner_cards_left,
@@ -273,6 +274,13 @@
     display: grid;
     grid-template-rows: 348px 261px;
     gap: 16px;
+    min-width: 0;
+}
+
+.media_partner_cards_left>*,
+.media_partner_cards_right>* {
+    height: 100%;
+    min-height: 0;
 }
 
 .media_partner_cards_left_top {
@@ -338,19 +346,36 @@
     justify-content: space-between;
 }
 
-.media_partner_card,
-.media_partner_card_image {
+.media_partner_card {
     height: 348px;
 }
 
 .media_partner_card_image {
     position: relative;
+    overflow: visible;
+    clip-path: inset(-500px 0 0 0 round 8px);
 }
 
 .media_partner_card_image img {
     position: absolute;
-    bottom: 0;
     left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    object-fit: unset;
+}
+
+.media_partner_label {
+    position: absolute;
+    left: 18px;
+    bottom: 22px;
+    z-index: 2;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
 .media_partner_card_right_bottom {
@@ -442,10 +467,26 @@
     max-width: 370px;
 }
 
-.interior .work_plan_title,
-.bddmedia .work_plan_title {
+.interior .work_plan_title {
     max-width: 230px;
 }
+.content_media {
+    display: flex;
+    justify-content: center;
+    background: var(--neutral900);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.content_media_video {
+    display: block;
+    height: 563px;
+    width: auto;
+    max-width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+}
+
 
 /* work_plan */
 .work_plan_head {
@@ -879,7 +920,7 @@
     .total_cost {
         padding: 16px;
         min-width: 100%;
-        gap: 24px;
+        gap: 16px;
     }
 
     .total_cost_title {
@@ -925,6 +966,11 @@
         padding: 8px 24px 8px 12px;
         order: 3;
     }
+    .content_media_video {
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+    }
 
     /* what_is */
     .what_is_media_cards {
@@ -933,6 +979,14 @@
 
     .what_is_media_image_card {
         order: -1;
+    }
+
+    .what_is_media_text_card {
+        padding: 16px;
+    }
+
+    .what_is_media_content {
+        margin: 8px 0 24px 0;
     }
 
     .what_is_media_btn {
@@ -972,7 +1026,15 @@
         order: 1;
         height: auto;
         aspect-ratio: 333 / 192;
-        overflow: hidden;
+        overflow: visible;
+        clip-path: inset(-500px 0 0 0 round 8px);
+    }
+
+    .media_partner_cards {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding-top: 16%;
     }
 
     .media_partner_cards_left_top {
@@ -1244,18 +1306,35 @@
 
     .advantages_supervision_information {
         grid-template-columns: 1fr 1fr;
+        gap: 12px;
     }
 
     .advantages_supervision_card {
         padding: 12px;
     }
 
-    .advantages_supervision_title {
+    .advantages_supervision_card:nth-child(2) .advantages_supervision_title.h4_rc {
         font-size: 18px;
     }
 
     .advantages_supervision_description {
         font-size: 16px;
+    }
+
+    .advantages_supervision_card:nth-child(1) {
+        order: 1;
+    }
+
+    .advantages_supervision_card:nth-child(2) {
+        order: 2;
+    }
+
+    .advantages_supervision_card:nth-child(3) {
+        order: 4;
+    }
+
+    .advantages_supervision_card:nth-child(4) {
+        order: 3;
     }
 
     /* tariffs */
@@ -1290,6 +1369,11 @@
     .dream_project_card__body {
         flex-direction: column;
         gap: 16px;
+        padding: 16px;
+    }
+
+    .dream_project_card__img {
+        height: 200px;
     }
 
     .dream_project_card__includes {

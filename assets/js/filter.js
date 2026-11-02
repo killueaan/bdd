@@ -186,6 +186,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const emptyEl = document.querySelector('.catalog_empty');
     const PROMO_AFTER = 6;
 
+    // --- загрузить ещё ---
+    const PAGE_SIZE = 13;
+    let limit = PAGE_SIZE;
+    const moreWrap = document.querySelector('.catalog_more');
+    const moreBtn = moreWrap?.querySelector('.catalog_more__btn');
+
     const selects = [...form.querySelectorAll('.select__native[name]')];
 
     const ranges = [...form.querySelectorAll('.catalog_filter__range[id$="-range"]')]
@@ -289,19 +295,27 @@ document.addEventListener('DOMContentLoaded', () => {
             (ok ? visible : hidden).push(card);
         });
 
-        const order = sortCards(visible).slice();
-        if (promo) order.splice(Math.min(PROMO_AFTER, visible.length), 0, promo);
-        list.append(...order, ...hidden);
+        const sorted = sortCards(visible).slice();
+        const shown = sorted.slice(0, limit);
+        const rest = sorted.slice(limit);
+
+        rest.forEach((card) => { card.hidden = true; });
+
+        const order = shown.slice();
+        if (promo) order.splice(Math.min(PROMO_AFTER, shown.length), 0, promo);
+        list.append(...order, ...rest, ...hidden);
 
         const n = visible.length;
         if (countEl) countEl.textContent = `Найдено ${n} ${plural(n, ['проект', 'проекта', 'проектов'])}`;
         if (emptyEl) emptyEl.hidden = n > 0;
+        if (moreWrap) moreWrap.hidden = rest.length === 0;
 
         renderChips(f);
     };
 
     let waitTimer, fadeTimer;
     const update = () => {
+        limit = PAGE_SIZE;
         clearTimeout(waitTimer);
         clearTimeout(fadeTimer);
         waitTimer = setTimeout(() => {
@@ -355,6 +369,18 @@ document.addEventListener('DOMContentLoaded', () => {
         update();
     });
 
+    moreBtn?.addEventListener('click', () => {
+        const before = cards.filter((card) => !card.hidden);
+
+        limit += PAGE_SIZE;
+        render();
+
+        cards.forEach((card) => {
+            if (!card.hidden && !before.includes(card)) card.classList.add('fade-in');
+        });
+
+        setTimeout(() => cards.forEach((card) => card.classList.remove('fade-in')), 600);
+    });
     const directions = document.querySelector('[data-directions]');
 
     if (directions) {
